@@ -95,16 +95,17 @@ h6.md-focus:before {
 }
 ```
 
-**重启Typora**
+- **重启Typora**
 
 __tips:__目录功能没有同步标题名称。
 
 ---
 
-为了与已有主题区分，也可以：
+- __为了与已有主题区分，也可以：__
 
-新建立主题(copy 已有主题文件夹和css)  ->  并加入上面的css。
+新建立主题(copy 已有主题文件夹和css)  ->  并加入上面的css。  // 主题名称不能包含 `大写字母`，可以包含中文。
 
 [Typora添加主题](https://www.cnblogs.com/superdrew/p/12821051.html)
 
 [Typora主题下载](https://theme.typora.io/)
+
