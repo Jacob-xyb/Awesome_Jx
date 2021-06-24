@@ -4,7 +4,53 @@
 
 - 剪切文件
 
+## 终端运行shell脚本(.sh文件)
 
+1. 创建脚本 `touch deploy.sh`
+2. 编写脚本：
+```d 
+git add .
+git commit -m "update blog"
+git push origin master
+```
+
+3. 设置权限：如果报错 `Permission denied`，说明没有权限。
+
+   解决方式为输入命令: `chmod 777 deploy.sh`或者`chmod +x deploy.sh`
+   
+   __tips:__ 777 权限谨慎使用 为高权限
+
+---
+
+- 写入、读取和执行权限具有以下数字值：
+  - r（读）= 4
+  
+  - w（写）= 2
+  
+  - x（可执行) = 1
+  
+  - 无权限 = 0
+  
+  特定用户类的权限数字是该类的权限值之和。
+  
+- 777 代表 `属主：7；属组：7；其他：7`为最高权限，一般 750 即可。
+
+---
+
+4. 设置环境变量：如果报错 `command not found: deploy.sh`，说明需要设置 PATH。
+
+   原因：如果执行 `deploy.sh`, shell 会在 `$PATH` 变量包含的路径里去找文件。但是，Unix/Linux 为了安全问题，并没有把当前路径放到 `$PATH` 中，所以有两种方案：
+
+   - `./deploy.sh`: 从当前路径查找。可以使用，但不推荐。
+
+   - 设置PATH：在  `deploy.sh` 文件头部添加 `#!/bin/bash`
+
+     ```
+     #!/bin/bash
+     git add .
+     git commit -m "update blog"
+     git push origin master
+     ```
 
 # 大型软件安装
 
@@ -53,5 +99,14 @@ export PATH
 
 - Better 365 团队出品，触控板神器，鼠标神器，定制快捷键等等，重要的是，还可以编辑脚本。
 
-  
+# Mac小常识
+
+## Shell
+
+Bash 是最常见的 shell，Mac 中默认 shell 就是 bash；但是mac 10.15 系统以后 shell 默认用得是 zsh。
+
+很多人的 mac 中会使用 zsh 而不是 bash，一大半是因为 oh-my-zsh 这个配置集，它兼容 bash，还有自动补全等好用的功能。zsh 的配置文件\~/.zshrc 。
+
+[知乎 shell、bash 和 zsh](https://zhuanlan.zhihu.com/p/34197680)
+
 
