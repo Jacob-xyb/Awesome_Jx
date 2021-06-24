@@ -79,7 +79,7 @@ path=('/Users/Jacob/miniforge3/bin' $path)
 export PATH
 ```
 
-> 
+> 后续使用教程见[]()
 
 # APP推荐
 
