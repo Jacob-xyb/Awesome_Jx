@@ -51,7 +51,10 @@ git config user.email 提交人邮箱
 
 3. 将 git 仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：
 
-`git rest --hard commitID`
+```python
+git reset --hard commitID		# 恢复到指定ID版本
+git reset --hard		# 默认回退到上一个版本
+```
 
 - 注意：如果将版本指针前置的话，指针后面的日志就会消失。
 
@@ -89,9 +92,82 @@ git config user.email 提交人邮箱
 
 使用场景：分支临时切
 
->`git stash`		# 临时保存
+```python
+git stash		# 临时保存
+git stash pop	# 恢复保存
+```
 
->`git stash pop`	# 恢复保存
+## git config 配置
+
+ Git 有一个工具被称为 git  config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。
+
+### 配置文件的存储位置
+
+1. 仓库级：该文件位于当前仓库下，路径`.git/`，文件名为`.gitconfig`，这个配置中的设置只对当前所在仓库有效。	
+
+2. 全局级：`~/.gitconfig` 文件 ：具体到你的用户。PC为例就是`C:\Users\name\.gitconfig`。
+
+3. 系统级：位于git安装目录的config文件，也就是`D:\Program Files\Git\etc\.gitconfig`
+
+### 配置文件生效顺序
+
+- __仓库级 > 全局 > 系统__
+
+### git config 查看
+
+- `git config [--local|--global|--system] --list`
+
+命令参数：`--list`  简写：`-l` （不建议用简写）
+
+```python
+git config --local --list		# 查看仓库级
+git config --global --list		# 查看全局级
+git config --system --list		# 查看系统级
+git config --list		# 查看生效配置(三个级别最终计算后的配置信息)
+```
+
+### git config 编辑
+
+- `git config [-–local|-–global|-–system] --edit`
+
+命令参数：`--edit`  简写：`-e` （不建议用简写）
+
+```python
+git config --local --edit		# 编辑仓库级
+git config --global --edit		# 编辑全局级
+git config --system --edit		# 编辑系统级
+git config --list		# 默认编辑仓库级(这与 --list稍有不同)
+```
+
+### git config 增加配置
+
+- `git config [-–local|–-global|-–system] -–add section.key value` (默认是添加在local配置中)
+
+__tips:__ 
+
+1. add后面的section,key,value一项都不能少，否则添加失败。
+2. add是增加一项配置，不是将一项配置重新赋值。
+
+### git config 获取配置
+
+- 不需要查看所有配置，只查看某个配置项的值。
+
+- `git config [–-local|–-global|–-system] -–get section.key` (默认提取 local 配置中的内容)
+
+__tips:__ 
+
+1. 如果获取一个section不存在的key值，不会返回任何值。
+2. 如果获取一个不存在的section的key值，则会报错。
+
+### git config 删除配置
+
+- `git config [–-local|–-global|-–system] –-unset section.key` (默认删除 local 配置中的内容)
+
+### git config 其他操作
+
+```python
+git config http.sslVerify "false"  # 忽略证书错误
+```
 
 # GitHub
 
@@ -165,7 +241,7 @@ git config user.email 提交人邮箱
 
 ---
 
-- git 忽略清单
+## git 忽略清单
 
 将不需要被 git 管理的 文件/文件夹 名字添加到此文件中，git就会忽略这些文件。
 
@@ -203,7 +279,19 @@ __.gitignore范例:__
 
 ---
 
-- ssh 免登录
+### 全局忽略
+
+```python
+git config --global core.excludesfile ~/.gitignore_global		# 设置全局有效
+# 设置后，如果仓库中还有.gitignore文件，则两者均会忽略。
+git config --list
+```
+
+### 只对本地有效
+
+`git config core.excludesfile ~/.gitignore`		# 只对本地有效，不会上传到远程仓库
+
+## ssh 免登录
 
 https 协议仓库地址，是需要账号密码进行验证的。
 
@@ -230,7 +318,7 @@ touch 文件      # 创建一个文件
 
 ### OpenSSL SSL_read: Connection was reset, errno 10054 
 
-执行 `git clone 项目地址` 后，出现的报错，一下是报错原文。
+执行 `git clone 项目地址` 后，出现的报错，以下是报错原文。
 
 > fatal: unable to access 'https://github.com/项目地址': OpenSSL SSL_read: Connection was reset, errno 10054
 
@@ -242,4 +330,11 @@ git config --global http.sslVerify "false"
 
 - 然后再执行 `git clone 项目地址` 即可。
 
-## L
+## LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+
+梯子将配置信息写入了 `~/.gitconfig` 里面，使用以下命令即可：
+
+```python
+git config --global http.sslBackend "openssl" 
+```
+
