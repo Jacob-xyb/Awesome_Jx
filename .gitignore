@@ -1,6 +1,7 @@
 # IDE or OS
 .idea/
 .DS_Store
+*/.DS_Store
 
 # data
 data/
