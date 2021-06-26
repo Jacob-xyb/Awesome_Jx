@@ -283,7 +283,7 @@ __.gitignore范例:__
 
 ```python
 git config --global core.excludesfile ~/.gitignore_global		# 设置全局有效
-# 设置后，如果仓库中还有.gitignore文件，则两者均会忽略。
+# 设置后，如果仓库中还有.gitignore文件，则两者均会生效，猜测本地的会强一些。
 git config --list
 ```
 
