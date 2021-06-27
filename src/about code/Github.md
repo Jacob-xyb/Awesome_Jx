@@ -163,6 +163,24 @@ __tips:__
 
 - `git config [–-local|–-global|-–system] –-unset section.key` (默认删除 local 配置中的内容)
 
+### 全局忽略
+
+- 首先找到全局目录，也就是`C:\Users\name\.gitconfig`所在的目录，Mac一次类推。在全局目录下创建一个文件`.gitignore_global`，里面写好需要忽略的内容，使用以下命令进行连接，这样在全局忽略就可以生效了，`git config --global --list`可以查看检查一下。
+- __tips:__全局忽略的好处就是可以删除本地的`.gitignore`文件，GitHub上就不会显示项目中忽略了什么文件了。
+
+```python
+git config --global core.excludesfile ~/.gitignore_global		# 设置全局有效
+# 设置后，如果仓库中还有.gitignore文件，则两者均会生效，猜测本地的会强一些。
+git config --list
+```
+
+- __只对本地生效__
+  原理很简单，还是在全局目录里创建一个忽略文件，暂且叫`gitignore_global`，填好忽略信息后就可以执行命令了，就会将忽略信息和`gitignore_global`连接起来了，这样忽略只会对本地仓库生效。
+```python
+git config core.excludesfile ~/.gitignore		# 只对本地有效，不会上传到远程仓库
+```
+
+
 ### git config 其他操作
 
 ```python
@@ -278,18 +296,6 @@ __.gitignore范例:__
 `doc/*.txt` # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 
 ---
-
-### 全局忽略
-
-```python
-git config --global core.excludesfile ~/.gitignore_global		# 设置全局有效
-# 设置后，如果仓库中还有.gitignore文件，则两者均会生效，猜测本地的会强一些。
-git config --list
-```
-
-### 只对本地有效
-
-`git config core.excludesfile ~/.gitignore`		# 只对本地有效，不会上传到远程仓库
 
 ## ssh 免登录
 
