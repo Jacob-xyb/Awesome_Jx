@@ -74,12 +74,12 @@ git push origin master
 
 - `vim ~/.zshrc`，加入以下内容：(注意更改自己Mac用户名)
 
-```
+```python
 path=('/Users/Jacob/miniforge3/bin' $path)
 export PATH
 ```
 
-> 后续使用教程见[]()
+> [后续使用教程](https://github.com/Jacob-xyb/Awesome_Jx/blob/master/src/about%20code/MacOS/Miniforge.md)
 
 # APP推荐
 
