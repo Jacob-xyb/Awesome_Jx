@@ -81,6 +81,20 @@ export PATH
 
 > [后续使用教程](https://github.com/Jacob-xyb/Awesome_Jx/blob/master/src/about%20code/MacOS/Miniforge.md)
 
+## VSCode
+
+- 下载地址
+
+  [VSCode官网](https://code.visualstudio.com)
+
+  M1芯片记得选arm架构的下载。
+
+- 由于是微软的官网下载，下载的速度非常非常的慢，发现一个很强的方法可以突破苍穹。
+
+  1. 首先在下载列表中复制下载的链接。
+
+  2. 然后用 `vscode.cdn.azure.cn` 替换下载链接中 `/stable` 之前的内容，然后就会发现速度飞起了。
+
 # APP推荐
 
 ## 解压缩工具 Myzip
@@ -108,5 +122,4 @@ Bash 是最常见的 shell，Mac 中默认 shell 就是 bash；但是mac 10.15 �
 很多人的 mac 中会使用 zsh 而不是 bash，一大半是因为 oh-my-zsh 这个配置集，它兼容 bash，还有自动补全等好用的功能。zsh 的配置文件\~/.zshrc 。
 
 [知乎 shell、bash 和 zsh](https://zhuanlan.zhihu.com/p/34197680)
-
 
