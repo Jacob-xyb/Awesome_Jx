@@ -10,6 +10,21 @@
 
 - 工作目录 —— 暂存区 —— Git仓库
 
+### 查看指令
+
+```python
+git log				# 查看日志信息
+git remote -v		# 查看当前项目的远程git地址
+cat .git/HEAD		# 查看当前HEAD
+```
+### 设置指令
+
+```python
+# 和远程仓库建立连接
+git remote add origin https://github.com/Jacob-xyb/Projiect  
+git remote remove origin https://github.com/Jacob-xyb/Projiect	# 删除远程仓库
+```
+
 ## Git 基本配置
 
 ### Git 配置
@@ -33,11 +48,13 @@ git config user.email 提交人邮箱
 
 ### 提交步骤
 
-1. `git init`           # 初始化仓库
-2. `git status`         # 查看文件状态
-3. `git add 文件列表`   # 追踪文件（提交到暂存区）
-4. `git commit -m 提交信息` # 向仓库中提交代码
-5. `git log`            # 查看提交记录
+```python
+git init				# 初始化仓库
+git status				# 查看文件状态
+git add 文件列表			# 追踪文件（提交到暂存区）
+git commit -m "提交信息"	# 向仓库中提交代码
+git log					# 查看提交记录
+```
 
 ### 撤销步骤
 
@@ -77,8 +94,10 @@ git branch		# 查看分支（*为当前分支）
 git branch 分支名称			# 创建分支（基于所在分支创建）
 git checkout 分支名称		# 切换分支
 git merge 来源分支			# 合并分支（将来源分支合并到当前分支）
-git branch -d 分支名称		# 删除分支（如果删除的分支没有被合并是不能删除的）
-git branch -D 分支名称		# 强制删除分支
+git branch -d 分支名称		# 删除本地分支（如果删除的分支没有被合并是不能删除的）
+git branch -D 分支名称		# 强制删除本地分支
+git push origin :分支名称	# 删除远程分支（":"代表删除）
+git branch -m oldName newName		# 重命名
 ```
 
 -  切换分支之前要保持当前暂存区完全干净，不然会出现错误。
@@ -88,13 +107,15 @@ git branch -D 分支名称		# 强制删除分支
     
     [这时，我们可以使用“git stash”(储藏)来解决这个问题。](https://zhuanlan.zhihu.com/p/347073892)
     
-### 本地和远程分支
+### 查看本地和远程分支
 
 ```python
 # 查看本地分支
 git branch == git branch --list == git branch -l
 # 查看本地和远程分支
 git branch --all == git branch -a
+# 查看远程所有分支
+git branch --remote == git branch -r
 ```
 
 ### 暂时保存更改
@@ -107,6 +128,22 @@ git branch --all == git branch -a
 git stash		# 临时保存
 git stash pop	# 恢复保存
 ```
+
+### 分支管理
+
+```python
+# 将本地develop分支强制（-f）推送到远程master
+# （Jx极力推荐，不过用前三思）
+git push origin develop:master -f
+# 重置的方法
+git checkout master		# 切换到旧分支
+git reset --hard develop		# 将本地的旧分支master重置成develop
+git push origin master --force	# 强制推送
+# 删除远程分支
+git branch -d -r develop		# 删除远程分支
+git push origin:develop			# 推送至服务器才行
+```
+
 
 ## git config 配置
 
