@@ -87,36 +87,52 @@ git reset --hard		# 默认回退到上一个版本
 2. 开发分支（develop）：作为开发的分支，基于 master 分支创建。
 3. 功能分支（feature）：作为开发具体功能的分支，基于开发分支创建。
 
-### 分支命令
-
-```python
-git branch		# 查看分支（*为当前分支）
-git branch 分支名称			# 创建分支（基于所在分支创建）
-git checkout 分支名称		# 切换分支
-git merge 来源分支			# 合并分支（将来源分支合并到当前分支）
-git branch -d 分支名称		# 删除本地分支（如果删除的分支没有被合并是不能删除的）
-git branch -D 分支名称		# 强制删除本地分支
-git push origin :分支名称	# 删除远程分支（":"代表删除）
-git branch -m oldName newName		# 重命名
-```
-
--  切换分支之前要保持当前暂存区完全干净，不然会出现错误。
-    - 这是由于 git 的暂存区是所有分支共享的，因此，只要未提交(commit)的内容都会在所有分支上呈现。有时，我们还未完成当前分支的功能开发，但是又亟需在另一个分支上修改内容(如：修复一个 BUG)。
-    
-    - 一种方式是通过“git commit”(提交)，解决这个问题。但在正常使用中，我们应该在完成某个功能的开发后才提交一个版本，而不是频繁的提交。
-    
-    [这时，我们可以使用“git stash”(储藏)来解决这个问题。](https://zhuanlan.zhihu.com/p/347073892)
-    
 ### 查看本地和远程分支
 
 ```python
-# 查看本地分支
+# 查看本地分支（*为当前分支）
 git branch == git branch --list == git branch -l
 # 查看本地和远程分支
 git branch --all == git branch -a
 # 查看远程所有分支
 git branch --remote == git branch -r
+# 切换分支
+git checkout 分支名称
+# 分支重命名
+git branch -m [oldName] [newName]
 ```
+
+- 切换分支之前要保持当前暂存区完全干净，不然会出现错误。
+
+	- 这是由于 git 的暂存区是所有分支共享的，因此，只要未提交(commit)的内容都会在所有分支上呈现。有时，我们还未完成当前分支的功能开发，但是又亟需在另一个分支上修改内容(如：修复一个 BUG)。
+
+	- 一种方式是通过“git commit”(提交)，解决这个问题。但在正常使用中，我们应该在完成某个功能的开发后才提交一个版本，而不是频繁的提交。
+
+[这时，我们可以使用“git stash”(储藏)来解决这个问题。](https://zhuanlan.zhihu.com/p/347073892)
+
+### 创建分支
+
+```python
+git branch 分支名称			# 创建分支（基于所在分支创建）
+git checkout -b branchName commitId	# 根据指定版本号创建分支
+```
+
+### 合并和删除分支
+
+- 合并
+
+```python
+git merge 来源分支			# 合并分支（将来源分支合并到当前分支）
+```
+- 删除
+
+```python
+git branch -d 分支名称		# 删除本地分支（如果删除的分支没有被合并是不能删除的）
+git branch -D 分支名称		# 强制删除本地分支
+git push origin -d 分支名称	# 删除远程分支(Git > v1.7.0)[推荐]
+git push origin :分支名称	# 删除远程分支(":"代表删除)
+```
+
 
 ### 暂时保存更改
 
@@ -140,7 +156,7 @@ git checkout master		# 切换到旧分支
 git reset --hard develop		# 将本地的旧分支master重置成develop
 git push origin master --force	# 强制推送
 # 删除远程分支
-git branch -d -r develop		# 删除远程分支
+git push origin --delete develop	# 删除远程仓库
 git push origin:develop			# 推送至服务器才行
 ```
 
@@ -233,6 +249,61 @@ git config core.excludesfile ~/.gitignore		# 只对本地有效，不会上传�
 
 ```python
 git config http.sslVerify "false"  # 忽略证书错误
+```
+
+## git tag
+
+- 标签可以针对某一时间点的版本做标记，常用于版本发布。
+
+### 查看标签
+
+```python
+git tag			# 打印出当前仓库的所有标签
+git tag -l "v0.1.*"		# 搜索符合模型的标签
+git ls-remote --tags origin		# 打印所有的远程标签
+git show [tagName]		# 查看标签的版本信息
+```
+
+### 打标签
+
+```python
+# 轻量标签是指向提交对象的引用（不推荐）
+## 创建轻量标签不需要传递参数，直接指定标签名称即可。
+git tag [tagName]-light		
+# 附注标签则是仓库中的一个独立对象。（推荐）
+## 创建附注标签时，参数a即annotated的缩写，指定标签类型，后附标签名。参数m指定标签说明，说明信息会保存在标签对象中。
+git tag -a [tagName] -m "0.1.2版本"
+
+---
+
+# 补打标签，也就是不必打在head上。
+git log		# 获取commitID
+git tag -a [tagName] [前七位commitID]
+```
+
+### 切换到标签
+
+```python
+git checkout [tagName]		# 切换到标签
+```
+
+### 删除标签
+
+```python
+git tag -d [tagName]		# 删除标签
+
+# 删除远程标签
+git push origin :refs/tags/[tagName]
+git push origin -d tag [tagName]	# (Git > v1.7.0)
+```
+
+### 发布标签
+
+- 通常的git push不会将标签对象提交到git服务器，我们需要进行显式的操作：
+
+```python
+git push origin [tagName]		# 单独发布
+git push origin --tags			# 将本地所有标签一次性提交
 ```
 
 # GitHub
