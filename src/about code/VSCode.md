@@ -1,16 +1,62 @@
 # VSCode
 ## 快捷键
 
+### 全局
+
+```python
+Ctrl + Shift + P			# 显示所有命令
+Ctrl + Shift + X			# 打开应用商店(会与QQ浏览器的区域截图快捷键冲突)
+```
+### 文本
+
 ```python
 F5		# 运行程序
+Ctrl + D		# 将下一个查找匹配项添加到选择
 ```
+
+### Ctrl + Shift + P
+
+- `Ctrl + Shift + P`		# 显示所有命令
+
+```python
+//	命令						//中文
+view:toggle menu bar		# 视图：切换菜单栏
+```
+
+### 快捷键终结设置教程
+
+1. 简单的设置方式
+
+- 文件 -> 首选项 -> 键盘快捷方式
+
+![](https://i.loli.net/2021/06/29/SsGFRMhyTjnO94g.png)
+
+- 这里就可以自定义自己喜欢的快捷键了
+
+2. 进阶教程
+
+- 在上述界面中找到右上角的图标，打开键盘快捷键方式(JSON)
+
+![](https://i.loli.net/2021/06/29/TqVZtdXLW9AwKuH.png)
+
+- 可以在`.json`文件中自由编辑快捷键的方式了，command命令可以在上一个界面右键复制命令ID获取。
+
+![](https://i.loli.net/2021/06/29/Mnwi8yHh2rZqXSU.png)
+
 ## 插件
 
-- __vscode-icons__
+### vscode-icons
 
-根据 文件类型 显示 图标。
+- 根据 文件类型 显示 图标。
 
 > 个人感觉非常好用，毕竟撸代码的心情会好很多。
+
+### Bracket Pair Colorizer
+
+- 为括号生成不同颜色，能醒目的区分括号。
+- 编写多层结构时简直不要太好用。
+
+![](https://i.loli.net/2021/06/29/1HyTLbI3wcnlYxm.png)
 
 # 初次接触VSCode先做些什么？
 
@@ -87,3 +133,7 @@ or
 `"env": {"PYTHONPATH":"${workspaceRoot}"}`
 
 修改后，就可以在 __vscode__ 调用自己的包了。
+
+### pylint 不足以应对 django 框架
+
+[解决方案](https://www.bbsmax.com/A/A2dmq7Aqde/)
