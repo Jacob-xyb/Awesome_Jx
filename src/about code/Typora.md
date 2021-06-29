@@ -115,6 +115,8 @@ __tips:__目录功能没有同步标题名称。
 
 ### 纯吐槽
 
+![image-20210629184550212](https://i.loli.net/2021/06/29/3qY5UuTkVwgsOo8.png)
+
 ![image-20210629181515844](https://i.loli.net/2021/06/29/5BIDRk7Gxm8pKq1.png)
 
 [Node.js下载地址[坑啊！！千万不要下载，摆上来就是为了吐槽吐槽]](https://nodejs.org/en/) 
