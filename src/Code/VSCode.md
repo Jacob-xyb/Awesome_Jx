@@ -35,6 +35,18 @@
 
 ![](https://i.loli.net/2021/06/29/1HyTLbI3wcnlYxm.png)
 
+### Markdown All in One
+
+- 将MarkDown配置好，还有许多快捷键。
+
+![image-20210630164723603](https://i.loli.net/2021/06/30/RmOBTfNYuWD4XF6.png)
+
+### Markdown Preview Github Styling
+
+- 这个不多说，将MarkDown预览变为github风格
+
+![image-20210630164834343](https://i.loli.net/2021/06/30/heTYxkIv9qsZOdM.png)
+
 # 初次接触VSCode先做些什么？
 
 - __下载--安装，开源且免费，没啥好说的。__
