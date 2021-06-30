@@ -111,39 +111,11 @@ __tips:__目录功能没有同步标题名称。
 
 # Typora 联动 Picgo
 
-## Picgo SM床图设置
+## PicGo SM.MS图床设置
 
-### 纯吐槽
+- 之前一直白嫖PicGo的SM.MS图床，最近图片总是上传失败，百度一下后发现可谓是众说纷纭。但是矛头都是指向了 `没有对PicGO进行配置`，首先声明这个结论是对的，PicGo 不进行配置的话可能会用的很难受。(新版可以直接Token登陆，不要装插件，会安装很多多余的软件。)
 
-![image-20210629184550212](https://i.loli.net/2021/06/29/3qY5UuTkVwgsOo8.png)
-
-![image-20210629181515844](https://i.loli.net/2021/06/29/5BIDRk7Gxm8pKq1.png)
-
-[Node.js下载地址[坑啊！！千万不要下载，摆上来就是为了吐槽吐槽]](https://nodejs.org/en/) 
-
-- 万恶之源的开始！
-
-![image-20210629181841699](C:\Users\94978\AppData\Roaming\Typora\typora-user-images\image-20210629181841699.png)
-
-- 就很离谱的调用我的权限开始乱嗨？
-
-![20210629180943.png](https://i.loli.net/2021/06/29/n4vQKipCyjl7sSr.png)
-
-- 我要被这个 `Node.js` 搞疯了，我处女座！
-
-![image-20210629181656712](https://i.loli.net/2021/06/29/AXkSo6cwfJp4eZF.png)
-
-- 全部 say byebye !
-
-![image-20210629182249216](https://i.loli.net/2021/06/29/xMtJb5pTljvB9cY.png)
-
-![image-20210629182138166](https://i.loli.net/2021/06/29/S2mKXulV1LY6rza.png)
-
-![image-20210629182507035](https://i.loli.net/2021/06/29/J73hcgXSMTLRpdq.png)
-
-### 正儿八经的解决方案
-
-- 用自己的账户上传图片会稳定非常多，可以看到SM.MS需要一个Token，直接去SM的官网注册一下就好了，直接上链接：[SM.MS](https://sm.ms/)
+- 到 `SM.MS` 的官网注册一下，直接上链接：[SM.MS](https://sm.ms/)
 
 ![image-20210629183029477](https://i.loli.net/2021/06/29/NRzrjEs2v9UonpF.png)
 
@@ -153,6 +125,42 @@ __tips:__目录功能没有同步标题名称。
 
 ![image-20210629183554302](https://i.loli.net/2021/06/29/3zNeDcu2UMgPhKO.png)
 
-- 在主页可以看到啊，一个账户是有5个G白嫖的啊，N个账户就是 `N*5个G` 白嫖的啊，还可以找到自己的历史照片，是不是很赞呢，那就点个赞吧。  ! \ ^.^ / !
+- 在主页可以看到，一个账户是有5个G白嫖的啊，N个账户就是 `N*5个G` 白嫖的啊，还可以找到自己的历史照片。
 
 ![image-20210629183816561](https://i.loli.net/2021/06/29/QZXuGeI9VzRD2WK.png)
+
+
+### 更新日志
+
+- **20210630**
+
+SM.MS图床 貌似并不是很稳定，早上发现有部分图片加载不出来，还以为是免费的所以会被删图，但是下午又加载出来了，实属弄不懂，所以还是推荐用github存图吧，比较稳定可靠，下次再出github设置教程。
+
+## Typora 联动 PicGo
+
+之前总是手动在 `PicGo`上传图片，然后用 MarkDown 格式来引用图片，大量使用图片时效率很低，无意中发现 `Typora` 是可以与 `PicGo`联动的，实现起来也比较简单。
+
+- 设置
+
+文件  -->  设置  -->  图像
+
+![image-20210630145846775](https://i.loli.net/2021/06/30/DN3MFnAI6zkpiyR.png)
+
+按照图片红框进行设置，然后点击验证图片上传选项就可以玩耍了。
+
+**为了防止图片失效，大致讲解设置内容：**
+
+```python
+# 插入图片时...
+上传图片  --  对本地位置的图片应用上述规则
+// 这样设置就是只为了可以截图直接上传
+
+# 上传服务
+PicGo(app)  --  找到PicGo.exe所在路径
+// 然后验证图片看是否可用
+```
+
+- 缓存
+
+这样设置的话会在 `Typora` 内进行缓存，缓存文件夹：`C:\Users\useID\AppData\Roaming\Typora\typora-user-images`
+
