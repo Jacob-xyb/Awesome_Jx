@@ -1,29 +1,6 @@
 # VSCode
-## 快捷键
 
-### 全局
-
-```python
-Ctrl + Shift + P			# 显示所有命令
-Ctrl + Shift + X			# 打开应用商店(会与QQ浏览器的区域截图快捷键冲突)
-```
-### 文本
-
-```python
-F5		# 运行程序
-Ctrl + D		# 将下一个查找匹配项添加到选择
-```
-
-### Ctrl + Shift + P
-
-- `Ctrl + Shift + P`		# 显示所有命令
-
-```python
-//	命令						//中文
-view:toggle menu bar		# 视图：切换菜单栏
-```
-
-### 快捷键终结设置教程
+## 快捷键终结设置教程
 
 1. 简单的设置方式
 
