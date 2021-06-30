@@ -144,6 +144,12 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 - 生成：进入 __调试__ 界面，点击 __配置__ 按钮。
 - 查看：__工作目录__ --> __.vscode__
 
+### setting.json
+
+- 左下角`设置`  --  右上角`打开设置json`
+
+[setting.json打开方式](https://www.jb51.net/softjc/730336.html)
+
 ### VSCode中MarkDown图片无法显示
 
 - 这是由于 VSCode 中MarkDown默认配置中只允许载入安全内容，更改设置即可。
