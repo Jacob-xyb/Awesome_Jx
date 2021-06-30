@@ -117,9 +117,9 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 
 ## 插件
 
-### 必装插件
+- 必装插件
 
-- __Python__
+### Python
 
 写 Python 不装 Python 插件怎么玩？
 
@@ -142,8 +142,19 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 ### lauch.json
 
 - 生成：进入 __调试__ 界面，点击 __配置__ 按钮。
-
 - 查看：__工作目录__ --> __.vscode__
+
+### VSCode中MarkDown图片无法显示
+
+- 这是由于 VSCode 中MarkDown默认配置中只允许载入安全内容，更改设置即可。
+
+- 在MarkDown文件中输入快捷键 `Ctrl + Shift + P` 打开命令框，搜索MarkDown，找到更改预览安全设置。
+
+![image-20210630181155527](https://i.loli.net/2021/06/30/PSF6ayrQEit8ezl.png)
+
+- 选择 `允许不安全内容` 即可。
+
+![image-20210630181422694](https://i.loli.net/2021/06/30/JvrBVZLf9T1tuik.png)
 
 ## Python
 
