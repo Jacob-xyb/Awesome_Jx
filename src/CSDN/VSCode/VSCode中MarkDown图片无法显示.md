@@ -1,4 +1,4 @@
-﻿### VSCode中MarkDown图片无法显示
+### VSCode中MarkDown图片无法显示
 
 - 这是由于 VSCode 中MarkDown默认配置中只允许载入安全内容，更改设置即可。
 
