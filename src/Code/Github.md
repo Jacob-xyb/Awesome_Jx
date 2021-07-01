@@ -14,6 +14,7 @@
 
 ```python
 git log				# 查看日志信息
+git relog				# 查看一行日志
 git remote -v		# 查看当前项目的远程git地址
 cat .git/HEAD		# 查看当前HEAD
 ```
@@ -46,7 +47,7 @@ git config user.name 提交人姓名
 git config user.email 提交人邮箱
 ```
 
-### 提交步骤
+## Git提交
 
 ```python
 git init				# 初始化仓库
@@ -56,7 +57,9 @@ git commit -m "提交信息"	# 向仓库中提交代码
 git log					# 查看提交记录
 ```
 
-### 撤销步骤
+## Git撤销
+
+### 几种常见的撤销场景
 
 1. 用暂存区中的文件覆盖工作目录中的文件：
 
@@ -64,13 +67,14 @@ git log					# 查看提交记录
 
 2. 从暂存区中删除文件：
 
-`git rm -- cached 文件`
+`git rm --cached 文件`
 
 3. 将 git 仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：
 
 ```python
 git reset --hard commitID		# 恢复到指定ID版本
-git reset --hard		# 默认回退到上一个版本
+git reset --hard HEAD^		# 回退上一个版本
+git reset --hard HEAD~1		# 回退上一个版本 // ～n 就是回退n个版本
 ```
 
 - 注意：如果将版本指针前置的话，指针后面的日志就会消失。
@@ -78,6 +82,30 @@ git reset --hard		# 默认回退到上一个版本
 4. 删除 远程仓库 中的文件
 
 `git rm -r --cached 文件`
+
+5. 修改提交的commit注释
+
+`git commit --amend`
+
+然后会进入默认的vim编辑器，修改后保存即可。
+
+### 参数讲解
+
+- `--mixed`
+
+不删除工作空间改动代码，撤销commit，并且撤销git add . 操作
+
+这个为默认参数，`git reset --mixed HEAD^` 和 `git reset HEAD^` 效果是一样的。
+
+- `--soft`
+
+不删除工作空间改动代码，撤销`commit`，不撤销 `git add .`
+
+- `--hard`
+
+删除工作空间改动代码，撤销 `commit`，撤销 `git add .`
+
+注意完成这个操作后，就恢复到了上一次的commit状态。
 
 ## Git 分支
 
