@@ -416,7 +416,7 @@ __.gitignore范例:__
 
 ---
 
-## ssh 免登录
+## ssh 相关
 
 https 协议仓库地址，是需要账号密码进行验证的。
 
@@ -424,11 +424,36 @@ ssh 协议，可以通过秘钥实现免登录。
 
 公钥和私钥必须匹配才可以通过验证。公钥相当于一个门锁，私钥相当于钥匙。公钥和私钥需要开发者使用命令生成，也就是两个文件：公钥放在 github 账户中，私钥保留在开发者电脑中。当开发者通过 ssh 协议向远程仓库推送内容时，公钥和私钥会进行配对，如果配对成功，就会推送成功。
 
-> 具体操作步骤：
+### ssh密钥生成
+
+- 首先可以确认一下本机是否已经生成了一个公钥。
+
+```python
+% cd ~/.ssh
+% ls
+id_rsa		id_rsa.pub	known_hosts
+```
+
+如果有`id_rsa` 和 `id_rsa.pub` （或者类似之类成对的文件）， 有 `.pub` 后缀的文件就是公钥，另一个文件就是密钥。
+
+- 生成ssh
 
 1. 在 git bash 中输入 `ssh-keygen`，回车，此时会要求输入一些参数，但是可以使用默认值，可以一直回车到底（参数的含义以后再研究）。
 2. 秘钥生成后会生成两个文件，存放在 user/.ssh/ 目录中，目录中会有两个文件。`id_rsa` 就是私钥，需要保存在开发者电脑中；`id_rsa.pub` 是公钥，放在 github 服务器中； `rsa` 代表一种非对称加密方式（此处不深究）。
-3. 复制 `id_rsa.pub` 中的内容，打开 github -- 账户头像 -- Settings -- SSH and GPG kyes -- New SSH key.(标题可以不填) 
+3. 复制 `id_rsa.pub` 中的内容，打开 github -- 账户头像 -- Settings -- SSH and GPG kyes -- New SSH key.(标题可以不填，但不能有中文)
+4. 测试是否设置成功，输入 `ssh -T git@github.com` 如果看到 `Hi xxx!` 说明设置成功了。
+
+### 修改git的remote url
+
+- `git remote -v` 查看当前的 `remote url`
+
+如果结果是以 `https://` 开头，说明此项目是使用 `https://` 协议进行访问的，这种协议某些时候会报一些莫名的错误，如果是 `git@github` 开头的则是git协议，即ssh。
+
+- 在GitHub上找到ssh地址，使用以下命令来重置url。
+
+`git remote set-url origin ssh-url`
+
+- `git remote -v` 检查一下是否替换过来，然后就可以免登录管理仓库了。
 
 
 # git 上有关 Linux 的一些操作
