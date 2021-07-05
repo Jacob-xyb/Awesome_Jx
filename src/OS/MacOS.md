@@ -14,6 +14,8 @@
 
 - 剪切文件
 
+`option + command + v`
+
 ## 终端运行shell脚本(.sh文件)
 
 1. 创建脚本 `touch deploy.sh`
