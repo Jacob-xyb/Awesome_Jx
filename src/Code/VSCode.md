@@ -1,6 +1,6 @@
 # VSCode
 
-## 快捷键终结设置教程
+## 快捷键终极设置教程
 
 1. 简单的设置方式
 
@@ -21,6 +21,8 @@
 ![](https://i.loli.net/2021/06/29/Mnwi8yHh2rZqXSU.png)
 
 ## 插件
+
+- 边框栏右拉可以查看插件图标、大小、启用情况等。
 
 ### vscode-icons
 
@@ -46,6 +48,14 @@
 - 这个不多说，将MarkDown预览变为github风格
 
 ![image-20210630164834343](https://i.loli.net/2021/06/30/heTYxkIv9qsZOdM.png)
+
+### filesize
+
+- 最下方显示文件大小
+
+![image-20210706092251403](https://i.loli.net/2021/07/06/l8H9DayKSMVqbXm.png)
+
+
 
 # 初次接触VSCode先做些什么？
 
@@ -115,17 +125,9 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 
 # VSCode for Python
 
-## 插件
+## 常用设置
 
-- 必装插件
-
-### Python
-
-写 Python 不装 Python 插件怎么玩？
-
-### 常用插件
-
-- __配置 flake8__
+### 配置 flake8
 
 安装 flake8 之后写代码的时候编辑器就会提示哪里出错，代码格式不规范也会提示。
 
@@ -134,6 +136,20 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 3. 安装flake8成功后，打开VScode，文件->首选项->用户设置，在settings.json文件中输入"python.linting.flake8Enabled": true
 
 > 新手推荐使用一下，大佬就不用受这个约束了，大佬心中自有法则。
+
+## 插件
+
+- 必装插件
+
+### Python
+
+写 Python 不装 Python 插件怎么玩？
+
+### Python Preview
+
+- `Python Preview`可展现可视化调试的过程，并添加到我们的Python代码中。它将调试代码转换为带有动画和图形元素的交互式会话，以表示应用程序状态，对于代码调试非常直观
+
+![img](https://img-blog.csdnimg.cn/img_convert/7e35deb82d27edb53c1abc255ca7852b.gif)
 
 # 遇到的问题
 
@@ -193,3 +209,26 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 |  vscode(nocoda)  | 165.56 |
 
 > 关不关conda影响好像不大，但是我觉得开着没必要所以就关了。
+
+### VSCode找不到相对路径文件
+
+遇到的问题是使用相对路径时，VSCode找不到文件会报错，但是pycharm不会，说明代码是没有写错的，问题在于VSCode的配置和pycharm是不一样的。
+
+- `"cwd": "${fileDirname}"`
+
+百度90%的答案都是：更改`launch.json`设置。
+
+在configurations中加入语句`"cwd": "${fileDirname}"`即可变成常规的相对路径模式；否则是以VSCode打开工作区的根目录为当前路径。
+
+但是这只是生效于调试模式，所以很多网友会在下面留言亲测无效，其实有效，只是对于调试模式有效，如何彻底解决这个问题，首先要弄懂终端运行和调试模式的工作地点。
+
+>​    没有`launch.json`的需要在调试里面添加设置，然后在.vscode文件夹里，`Ctrl + P`全局搜索一下就知道有没有了。
+
+- 终端运行和调试模式的工作地点
+
+**终端：** 工作地点就是终端所在目录，初始都是默认在工作区根目录，如果相对路径报错，说明运行的文件是不在当前目录的，可以 cd 切换到运行的文件所在的目录，但是这样过于繁琐，可以在设置中进行设置，我用的是python插件，因此搜索 `execute in file dir`，打勾即可，意思为是否在终端执行命令时使用文件的路径代替现在打开的目录。
+
+**调试：** 调试模式就关联 `launch.json`，默认工作目录就是工作区根目录只能在 json文件里面修改，就是在configurations中加入语句`"cwd": "${fileDirname}"`。
+
+![image-20210706133959357](C:\Users\94978\Desktop\5gJoNj4VwWtPlfz.png)
+
