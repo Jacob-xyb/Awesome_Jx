@@ -182,11 +182,79 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 
 ### VScode Python no module
 
-在lauch.json中，修改 "env": {}为 ：
+- 测试环境
+
+在lauch.json中，修改 `"env": {}` 为 ：
 
 `"env": {"PYTHONPATH":"${workspaceRoot}"}`
 
 修改后，就可以在 __vscode__ 调用自己的包了。
+
+- 终端
+
+将项目路径添加到系统路径中即可。
+
+```python
+import sys
+sys.path.append("绝对路径/相对路径")		# 用两种路径都是可以的
+```
+
+- 详细剖析
+
+说到底就是一个系统路径配置的一个问题，工作目录是动态的，因此没法在系统路径中间进行配置，coding时需要临时配置，pycharm帮忙完成了这个过程，VSCode则需要自己手动完成，所以Pycharm运行代码不报错，VSCode和终端运行则报错。
+
+```python
+Pycharm会自动添加当前的工作目录；因此，如果我添加一个包含在CWD中的模块，而这个模块不在PythonPath中，它可以正常工作。
+
+但是当从终端运行时，Python确实会报错，因为我的import语句引用了不可访问的模块，因为CWD没有添加到PYTHONPATH中。（在从Pycharm和terminal运行时，我确实验证了打印出 `sys.path` 的内容）
+```
+
+**举个例子：**
+
+项目结构如下图：
+
+![image-20210706163021018](https://i.loli.net/2021/07/06/jrDAkByVR786XN3.png)
+
+`__class__.py` 运行 `from Jx.__main__ import *` ，这在pycharm是不会报错的，但是在VSCode会报错。
+
+我们此时打印一下运行时的环境：
+
+```python
+import sys
+print(sys.path)
+```
+
+**pycharm**
+
+```python
+['~\database-search-algorithm\\Jx', '-\database-search-algorithm', *基础环境]
+```
+
+**VSCode**
+
+```python
+['~\database-search-algorithm\\Jx', *基础环境]
+```
+
+可以看出VSCode是没有添加工作区的根目录进去的，我们尝试着手动添加进去：
+
+```python
+import sys
+sys.path.append("../")
+print(sys.path)
+```
+
+然后你会发现，工作区的根目录就添加进去了，然后VSCode也没有报错了。
+
+**加深理解：**
+
+如果项目结构是这样的：
+
+![image-20210706164653933](https://i.loli.net/2021/07/06/vKZxon7dQUrbwGe.png)
+
+由于 `'~\database-search-algorithm\\Jx'` 是默认添加到系统路径了的，因此在`__class__.py` 运行 `from tests.__main__ import *` 在pycharm和VSCode里都不会报错。
+
+> 个人还是认为每次手动添加会很麻烦，也不知道会不会影响打包，如有新发现，会立即更新。
 
 ### pylint 不足以应对 django 框架
 
