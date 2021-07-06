@@ -298,5 +298,3 @@ print(sys.path)
 
 **调试：** 调试模式就关联 `launch.json`，默认工作目录就是工作区根目录只能在 json文件里面修改，就是在configurations中加入语句`"cwd": "${fileDirname}"`。
 
-![image-20210706133959357](C:\Users\94978\Desktop\5gJoNj4VwWtPlfz.png)
-
