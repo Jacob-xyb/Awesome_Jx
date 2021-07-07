@@ -298,3 +298,19 @@ print(sys.path)
 
 **调试：** 调试模式就关联 `launch.json`，默认工作目录就是工作区根目录只能在 json文件里面修改，就是在configurations中加入语句`"cwd": "${fileDirname}"`。
 
+# VSCode使用小技巧
+
+## 快捷键篇
+
+```python
+F2		# 文件重命名(需点击选中)
+F5		# debug模式运行
+Ctrl + F5		# debug模式运行(不调试)
+```
+
+## 应用篇
+
+### 多开项目
+
+- 一般可以 `Ctrl + Shift + N` 新建窗口然后打开文件夹。
+- 更快捷的是 `文件 -- 打开最近文件 -- Ctrl+单击` 即可新建窗口。(快捷方式：`Alt+F -- R -- Ctrl+单击`)
