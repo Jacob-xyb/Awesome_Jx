@@ -157,6 +157,35 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 
 ![img](https://img-blog.csdnimg.cn/img_convert/7e35deb82d27edb53c1abc255ca7852b.gif)
 
+### python snippets
+
+- 代码块提示，很方便。
+
+![image-20210712153815167](https://i.loli.net/2021/07/12/2BNXAKjEsV8MIWk.png)
+
+### Python Docstring Generator
+
+- 编写说明文档自动扩展，必装。
+
+![image-20210712170650222](https://i.loli.net/2021/07/12/FhJec6QHaWSCABY.png)
+
+---
+
+- 比较推荐
+
+### AREPL for python
+
+- AREPL automatically evaluates python code in real-time as you type.
+- 如果是频繁写入写出的话记得要关掉。
+
+![image-20210712162140152](https://i.loli.net/2021/07/12/XdFBatjxENGZJWu.png)
+
+### Kite AutoComplete AI Code: Python
+
+- kite功能非常强大，可以更方便的查看函数文档，但是最强大的代码补全和代码补全插件有点重复了，也不知道怎么关，有点忧伤。
+
+![image-20210712172634364](https://i.loli.net/2021/07/12/3kHtF7G5WeTIUXd.png)
+
 # 遇到的问题
 
 ## 通用问题
