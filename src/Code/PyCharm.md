@@ -1,3 +1,5 @@
+# 相关博客
+
 [PyCharm选择性忽略PEP8代码风格警告信息](https://blog.csdn.net/zgljl2012/article/details/51907663)
 
 [**右键显示  Edit with idle**](https://jingyan.baidu.com/article/c1a3101e13087ade656deb83.html)
@@ -25,3 +27,8 @@ Ctrl + Shift + F		# 当前项目中查找
 Ctrl + Alt + Left/Right		# 追踪光标位置（与网易云全局搜索快捷键冲突）
 ```
 
+# 破解教程
+
+[PyCharm2020.1破解教程（已验证）](https://www.cnblogs.com/mingyue5826/p/12913008.html)
+
+[PyCharm2018.3.4破解教程 for mac（未验证）](https://www.cnblogs.com/clnZ/p/13131350.html)

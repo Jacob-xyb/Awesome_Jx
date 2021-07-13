@@ -1,63 +1,6 @@
 # VSCode
 
-## 快捷键终极设置教程
-
-1. 简单的设置方式
-
-- 文件 -> 首选项 -> 键盘快捷方式
-
-![](https://i.loli.net/2021/06/29/SsGFRMhyTjnO94g.png)
-
-- 这里就可以自定义自己喜欢的快捷键了
-
-2. 进阶教程
-
-- 在上述界面中找到右上角的图标，打开键盘快捷键方式(JSON)
-
-![](https://i.loli.net/2021/06/29/TqVZtdXLW9AwKuH.png)
-
-- 可以在`.json`文件中自由编辑快捷键的方式了，command命令可以在上一个界面右键复制命令ID获取。
-
-![](https://i.loli.net/2021/06/29/Mnwi8yHh2rZqXSU.png)
-
-## 插件
-
-- 边框栏右拉可以查看插件图标、大小、启用情况等。
-
-### vscode-icons
-
-- 根据 文件类型 显示 图标。
-
-> 个人感觉非常好用，毕竟撸代码的心情会好很多。
-
-### Bracket Pair Colorizer
-
-- 为括号生成不同颜色，能醒目的区分括号。
-- 编写多层结构时简直不要太好用。
-
-![](https://i.loli.net/2021/06/29/1HyTLbI3wcnlYxm.png)
-
-### Markdown All in One
-
-- 将MarkDown配置好，还有许多快捷键。
-
-![image-20210630164723603](https://i.loli.net/2021/06/30/RmOBTfNYuWD4XF6.png)
-
-### Markdown Preview Github Styling
-
-- 这个不多说，将MarkDown预览变为github风格
-
-![image-20210630164834343](https://i.loli.net/2021/06/30/heTYxkIv9qsZOdM.png)
-
-### filesize
-
-- 最下方显示文件大小
-
-![image-20210706092251403](https://i.loli.net/2021/07/06/l8H9DayKSMVqbXm.png)
-
-
-
-# 初次接触VSCode先做些什么？
+## 初次接触VSCode先做些什么？
 
 - __下载--安装，开源且免费，没啥好说的。__
 
@@ -90,6 +33,67 @@ or
 3. 用 Microsoft or github 账号登陆后可以同步 VSCode 的设置。
 
 ![](https://i.loli.net/2021/06/11/XEPx4kwbS8lQdYI.png)
+
+## 快捷键终极设置教程
+
+1. 简单的设置方式
+
+- 文件 -> 首选项 -> 键盘快捷方式
+
+![](https://i.loli.net/2021/06/29/SsGFRMhyTjnO94g.png)
+
+- 这里就可以自定义自己喜欢的快捷键了
+
+2. 进阶教程
+
+- 在上述界面中找到右上角的图标，打开键盘快捷键方式(JSON)
+
+![](https://i.loli.net/2021/06/29/TqVZtdXLW9AwKuH.png)
+
+- 可以在`.json`文件中自由编辑快捷键的方式了，command命令可以在上一个界面右键复制命令ID获取。
+
+![](https://i.loli.net/2021/06/29/Mnwi8yHh2rZqXSU.png)
+
+## 插件
+
+- 边框栏右拉可以查看插件图标、评价、启用情况等。
+
+### vscode-icons
+
+- 根据 文件类型 显示 图标。
+
+> 个人感觉非常好用，毕竟撸代码的心情会好很多。
+
+### Bracket Pair Colorizer
+
+- 为括号生成不同颜色，能醒目的区分括号。
+- 编写多层结构时简直不要太好用。
+
+![](https://i.loli.net/2021/06/29/1HyTLbI3wcnlYxm.png)
+
+### Markdown All in One
+
+- 将MarkDown配置好，还有许多快捷键。
+
+![image-20210630164723603](https://i.loli.net/2021/06/30/RmOBTfNYuWD4XF6.png)
+
+### Markdown Preview Github Styling
+
+- 这个不多说，将MarkDown预览变为github风格
+
+![image-20210630164834343](https://i.loli.net/2021/06/30/heTYxkIv9qsZOdM.png)
+
+### filesize
+
+- 最下方显示文件大小
+
+![image-20210706092251403](https://i.loli.net/2021/07/06/l8H9DayKSMVqbXm.png)
+
+### Code Runner
+
+- 我刚开始感觉还用不上，运行代码找不到快捷键后试了一下真香，默认快捷键`Ctrl + Alt + N` 一键运行代码。
+
+![image-20210713163827767](https://i.loli.net/2021/07/13/21MPWJa7EoDUAxp.png)
 
 # VSCode 进阶
 
