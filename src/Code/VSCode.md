@@ -190,6 +190,47 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 
 ![image-20210712172634364](https://i.loli.net/2021/07/12/3kHtF7G5WeTIUXd.png)
 
+# VSCode for C++
+
+## 如何用VSCode写C++
+
+### Mac篇
+
+1. 需要安装一个编译器：command line tools
+
+在终端中输入以下指令：
+
+`xcode-select --install`
+
+如果出现：
+
+`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`
+
+说明你的Mac已经安装了编译器，直接进行下一步即可，否则按照提示安装编译器。
+
+2. vs code需要安装的插件
+
+目前我是安装了两个插件：`C/C++` 和 `code runner`
+
+其中`code runner` 插件中进行设置一下，搜索框中搜索`terminal` 将 `Run IN Terminal` 打勾。
+
+![image-20210718192655391](https://i.loli.net/2021/07/18/ctu7A8fSTHbk1ZQ.png)
+
+3. 运行一个代码
+
+然后创建一个`.cpp`文件，运行一下代码：
+
+```cpp
+#include <iostream>
+int main()
+{
+    std::cout<<"hello world"<<std::endl;
+    return 0;
+}
+```
+
+能打印出`hello world`就说明最最基本的C++环境已经配置成功了～
+
 # 遇到的问题
 
 ## 通用问题
