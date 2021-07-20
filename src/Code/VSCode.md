@@ -231,6 +231,41 @@ int main()
 
 能打印出`hello world`就说明最最基本的C++环境已经配置成功了～
 
+### Windows篇
+毕竟vscode是全平台，visualstudio虽然很强大，但是Unix并没有，而且有时还会写一下其他的语言，接下来讲解一下Windows下如何配置vscode写C++。
+> 编译器
+
+- 下载
+
+  同样的Windows下需要安装一个编译器：[mingw-w64](http://www.mingw-w64.org/doku.php/download)
+
+- 配置环境
+
+  以WIN10为例 ，`此电脑-属性-高级系统设置-环境变量-系统变量-path`，添加一条D:\Program Files\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin（你安装编译工具路径）
+
+- 检查是否配置成功
+
+  打开cmd终端，输入`gcc -v`，没有报错就算配置成功了~
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210720094210271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDU2MDY5OA==,size_16,color_FFFFFF,t_70)
+> 安装插件
+
+- C/C++
+
+  这是必备的，不用解释。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210720094822238.png)
+- Code Runner
+  
+  这个插件可以直接运行C++代码。快捷键：`Ctrl + Alt + N`
+
+  `Ctrl + P` 搜索  `Run In Terminal `，打上`√` 就可以让程序直接运行在vscode的集成控制台上。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210720094900880.png)
+
+      code runner插件有一个局限,code runner插件的原理其实是自动在控制台下帮助我们输入g++ xxx.cpp -o xxx.exe(假设是默认情况)这条编译指令,不会再添加额外的命令,比如如果代码中使用了winsock2用g++编译的话需要额外添加-lwsock32指令,即完整指令为g++ xxx.cpp -o xxx.exe -lwsock32,此时直接使用code runner的话会无法编译,这种情况应该使用上面提到的vscode集成控制台手动输入编译指令编译。
+
+> TODO
+
+- 若是要问我如何`F5`调试，抱歉，我亲生使用大佬们的各种方法，百花齐放没有一个在我身上成功过，目前能直接运行已经很满意了，调试的事情等我回炉深造一下再来讲解~
+
 # 遇到的问题
 
 ## 通用问题
