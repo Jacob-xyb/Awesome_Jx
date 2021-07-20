@@ -481,6 +481,10 @@ id_rsa		id_rsa.pub	known_hosts
 
 `git remote set-url origin ssh-url`
 
+​    如果没有添加过url地址可以使用：
+
+​    `git remote add origin ssh-url`
+
 - `git remote -v` 检查一下是否替换过来，然后就可以免登录管理仓库了。
 
 
