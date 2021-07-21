@@ -432,6 +432,77 @@ print(sys.path)
 
 ​        这样，只对针对创建这两种文件的编码方式为`gbk`。
 
+### C++  在 windows 上使用utf-8
+
+- 目的是实现`cpp`代码全平台统一
+
+  解释一下why，因为`unix`我改变不了它！！！反观`visual studio`因为莫名的强大，`gbk`和`utf-8`均可拿下，但是Windows上的vscode只能运行`gbk`，现在只需要让vscode灵活起来就OK了。
+
+- 百度千篇一律的复制粘贴
+
+  我不忍想吐槽一下，那些复制粘贴的大佬，你们真的试验成功了吗？fu*k，熬了一个夜，无限的下翻百度，CSDN也被我挖穿，永远都是一样的回答，突然发现了光的时候，什么玩意，娱乐圈乌烟瘴气，IT界也需要开会员引流了？见下图！
+
+  - 好牛皮的CV工程师，好牛皮的CV大佬，我先呕为敬。
+
+  ![image-20210721100806828](https://i.loli.net/2021/07/21/AmW54KtsNUI8cBG.png)
+
+  - 我真的呕了，有技术有必要这样？看ID我更呕了，让我联想到 `Kris Wu`，我呕够了再来写后续...
+
+  ![image-20210721101014178](https://i.loli.net/2021/07/21/V4QGBIxeJ1sf8CW.png)
+
+  ![image-20210721101031994](C:\Users\94978\AppData\Roaming\Typora\typora-user-images\image-20210721101031994.png)
+
+- 1.解决Windows终端
+
+  vscode是使用终端运行代码，虽然vscode有自己的集成终端，但是`Run Code`会自己调用外部终端（因为使用`Run Code`必须要开启`"code-runner.runInTerminal": true`），这就导致了C++代码其实是在`终端`中运行的，请注意我说的是`终端`。
+
+  我很想当然的认为`终端`就是`cmd`，百度`windows 修改 cmd 编码格式`，结果是千篇一律但是都是有效的。
+
+  `Windows + R  -- regedit -- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor`
+
+  ![](https://i.loli.net/2021/07/21/QJ5KjNp9C4oGtL7.png)
+
+  `右键 -- 新建 -- 字符串值 -- 命名：autorun -- 数值：chcp 65001`
+
+  ![image-20210721102040633](https://i.loli.net/2021/07/21/UC37twGOxRcpb2l.png)
+
+  `autorun`代表运行，相当于打开`cmd`就运行了`chcp 65001`。是的，你想的没错，在vscode里面的终端直接输入也是可以的，但是激活`utf-8`页面后呢，再次`Run Code`他会为你新建一个终端，你气不气，就问你气不气。
+
+  现在可以试一试是否设置成功：`Windows + R -- cmd -- 右键终端窗口 -- 属性`
+
+  ![image-20210721102530132](https://i.loli.net/2021/07/21/wQayWJFGvo5fLsI.png)
+
+  爽翻了，以为万事大吉，看进度条没这么简单。
+
+- 2.深度理解vscode
+
+  在vscode里面当然还是会乱码啦，然后现在要理解一个概念，`终端`只是一个表现形式，`cmd`只是一个`终端`的具体表象，另外一个表象则是`Windows PowerShell`，恰巧vscode默认用的这个。
+
+  ```python
+  Windows PowerShell
+  版权所有 (C) Microsoft Corporation。保留所有权利。
+  ```
+
+  我以为不能切换，OK，我能改`cmd`还不能改`PowerShell`？抱歉，不能，真的不能，[CV工程范例](https://blog.csdn.net/u014756245/article/details/100536552)；包括我添加`autorun`也是没有反应的，我气冲冲的冲到`PowerShell`老家(`.exe`所在地)也没有任何办法。
+
+  思考中：vscode真的不可以切换终端吗？在这里我找到了我要的光。
+
+  打开 vscode 设置，搜索`终端`：
+
+  ![image-20210721103837171](https://i.loli.net/2021/07/21/ZW9ax67YUyXl1rz.png)
+
+  发现终端设置是有69个，我一个一个排查，发现了很多有趣的设置，也发现了我要的光。
+
+  ![image-20210721104039255](https://i.loli.net/2021/07/21/TeimNVtJwOCKXAE.png)
+
+  搜索`terminal win`就会发现有关`windows`下的设置，将`default profile`设置成 `Command Prompt`即可，这就是我们刚刚改好的`cmd`，就又可以开心的敲代码了。
+
+- 小结
+
+  1. 更改`cmd`编码：`Windows + R  -- regedit -- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor`；`右键 -- 新建 -- 字符串值 -- 命名：autorun -- 数值：chcp 65001`。
+  2. 更改`vscode`设置：`设置 -- terminal win`；`default profile:Windows`改为  `Command Prompt`即可。
+  3. 好处，不会影响Windows上其他依赖`gbk`的程序，因为大部分都是用`PowerShell`运行的，同时vscode下也可以在`gbk`和`utf-8`来回切换。
+
 # VSCode使用小技巧
 
 ## 快捷键篇
