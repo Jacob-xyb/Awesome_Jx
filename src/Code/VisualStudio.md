@@ -15,3 +15,37 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210719172923229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDU2MDY5OA==,size_16,color_FFFFFF,t_70)
 
 设置好后就可以将那些文件删除了，删除后运行暂时没有发现任何问题。
+
+## 默认编码为utf-8
+
+### 单个编码 -- 高级选项卡
+
+ Visual Studio 设置默认编码格式在“高级保存选项”窗口中，可通过“文件”菜单打开；但有时“文件”菜单没有显示“高级保存选项”，需要把它显示出来。
+
+`工具 -- 自定义 -- 命令 -- 菜单栏（下拉选择文件） -- 添加命令 `；跳出的方框中`文件 -- 高级保存选项 -- 确定并保存`。
+
+![](https://img-blog.csdnimg.cn/20200425151309403.png)
+
+![](https://img-blog.csdnimg.cn/2020042515255887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODY4MTA4,size_16,color_FFFFFF,t_70)
+
+然后在`文件`中就可以通过`高级保存选项`进行保存了。
+
+## 全局默认 -- Format On Save
+
+- 下载
+
+  `扩展 -- 管理扩展 -- 联机 -- 下载插件：Format On Save`；安装好后可能要重启一下。
+
+- 检查
+
+  `扩展 -- 管理扩展 -- 已安装 `出现了这个插件代表安装好了。
+
+- 使用
+
+  `工具 -- 选项 -- Format On Save`
+
+  我啥都没有改，但是网上很多大佬都说把`Line Break`改为`Windows`；不明白改了有什么改变，因为我是多系统，就感觉没有改的必要。
+
+- 注意
+
+  VS只能保存为 `UTF-8 with BOM` 所以用QT之类的报错的话记得留意一下。
