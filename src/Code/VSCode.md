@@ -95,6 +95,12 @@ or
 
 ![image-20210713163827767](https://i.loli.net/2021/07/13/21MPWJa7EoDUAxp.png)
 
+### TabOut
+
+- tab键直接从括号或者引号中跳出，不再需要去按方向键或者end键。强推！！
+
+![image-20210723172104701](https://i.loli.net/2021/07/23/ZeNsOhwMr27dY4W.png)
+
 # VSCode 进阶
 
 ## 工作区详解
