@@ -469,7 +469,7 @@ id_rsa		id_rsa.pub	known_hosts
 1. 在 git bash 中输入 `ssh-keygen`，回车，此时会要求输入一些参数，但是可以使用默认值，可以一直回车到底（参数的含义以后再研究）。
 2. 秘钥生成后会生成两个文件，存放在 user/.ssh/ 目录中，目录中会有两个文件。`id_rsa` 就是私钥，需要保存在开发者电脑中；`id_rsa.pub` 是公钥，放在 github 服务器中； `rsa` 代表一种非对称加密方式（此处不深究）。
 3. 复制 `id_rsa.pub` 中的内容，打开 github -- 账户头像 -- Settings -- SSH and GPG kyes -- New SSH key.(标题可以不填，但不能有中文)
-4. 测试是否设置成功，输入 `ssh -T git@github.com` 如果看到 `Hi xxx!` 说明设置成功了。
+4. 测试是否设置成功，输入 `ssh -T git@github.com` 如果看到 `Hi xxx!` 说明设置成功了；没有的话会提示你生成配置文件，输入 `yes` 即可。
 
 ### 修改git的remote url
 
