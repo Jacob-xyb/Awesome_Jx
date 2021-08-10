@@ -21,12 +21,12 @@
 ### 设置默认打开目录
 
 - 打开文件：`jupyter_notebook_config.py`
-- 找到：`#c.NotebookApp.notebook_dir = ‘’` 
+- 找到：`# c.NotebookApp.notebook_dir = ‘’` 
 - 去掉该行前面的 `#`；在打算存放文件的位置先新建一个文件夹（很重要，最好是英文的），然后将新的路径设置在单引号中，保存配置文件。  
 
 ![img](https://i.loli.net/2021/07/14/sS69drQGoWP5gEz.png)
 
-- 最后还需要在开始菜单找到 `jupyter notebook` 快捷键，右键➡更多➡打开文件所在位置，找打快捷方式在文件中的位置，右键➡属性➡目标，去掉最后的`%USERPROFILE%`，应用，确定。
+- 最后还需要在开始菜单找到 `jupyter notebook` 快捷键，右键➡更多➡打开文件所在位置，找打快捷方式在文件中的位置，右键➡属性➡目标，去掉最后的`"%USERPROFILE%"`，应用，确定。
 ![更改默认目录](https://img-blog.csdnimg.cn/20190827175022714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTA4ODAz,size_16,color_FFFFFF,t_70)
 
 > MacOS并不需要设置，会在当前目录启动 `jupyter notebook`。
