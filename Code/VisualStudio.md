@@ -40,6 +40,82 @@
 
 - 彩虹括号插件
 
+# 库环境配置
+
+## OpenCV
+
+- 我的VS是2019版，其他版本仅供参考。
+
+### 下载
+
+- 官网一般是最新版的，如果想下载老版的可以在国内镜像资源库找找，反正我感觉官网下载时快时慢。
+
+  [OpenCV官网](https://opencv.org/)
+
+### 安装
+
+- 由于存在换电脑的可能性，我喜欢将cpp库安装在D盘根目录，这个因人而异。
+
+  ![image-20210816161406043](https://i.loli.net/2021/08/16/PwLfIAhMFTByvJj.png)
+
+  ![image-20210816161441929](https://i.loli.net/2021/08/16/mfT5Svr91sNoWFO.png)
+
+- 下载后的样子
+
+  ![image-20210816161537371](https://i.loli.net/2021/08/16/8lgwx7a3fkGtVnM.png)
+
+### 配置
+
+配置分为两个步骤，都很重要，极其重要。
+
+1. 配置Windows环境
+
+   我的环境是win10，不是win10的可供参考。
+
+   - 配置系统变量
+
+     是否有一股熟悉的味道；`此电脑 -- 右键 -- 属性 -- 高级系统属性 -- 环境变量 -- 系统变量 -- Path -- 双击进去 -- 新建`
+
+     输入opencv的bin路径：`D:\cpplib\opencv\build\x64\vc15\bin`（我用的是vc15，你用啥就添加啥的bin路径）（记得点确定关闭）
+
+   - 配置文件
+
+     很多时候配置好系统变量、配置好IDE还是会报错说找不到 ***.dll，这是因为关键启动文件需要放到系统目录中。（可能电脑只会在这里面找文件吧~）
+
+     将上述的bin目录下的`opencv_world453.dll`、`opencv_world453d.dll`、`opencv_videoio_ffmpeg453_64.dll`（文件名会跟着版本走，请自行对号入座）放入`C:\Windows\System32`路径下。
+
+2. 配置VS2019环境
+
+   目前VS2019环境属性是针对项目的，因此一个项目要这样来一次，所以保存着比较好，我自己也总是忘。
+
+   进入：`项目 -- 属性`
+
+   ![image-20210816164833819](https://i.loli.net/2021/08/16/O2Th3Gl8AXLJKNg.png)
+
+   首先注意两个问题：配置是`Debug`还是`Release`，这里不要选所有配置要分开配置，因为两个需要用到的解析器是不一样的；平台这里其实无所谓，opencv只能在x64上面运行，选x64即可。
+
+   以下操作注意是 **"添加、添加、还是···添加！"** ；多个就起新行。
+
+   - VC++目录
+
+     可执行文件目录：`D:\cppLib\opencv\build\x64\vc15\bin`
+
+     包含目录：`D:\cppLib\opencv\build\include`；`D:\cppLib\opencv\build\include\opencv2`
+
+     库目录：`D:\cppLib\opencv\build\x64\vc15\lib`
+
+     ![image-20210816165403955](https://i.loli.net/2021/08/16/n9VGd6j4FOz1foM.png)
+
+   - 链接器 -- 输入
+
+     附加依赖项：如果是Debug：`opencv_world453d.lib`；如果是Release：`opencv_world453.lib`
+
+     很好区分，最后面多个d的就是Debug文件。	
+
+     ![image-20210816165950633](https://i.loli.net/2021/08/16/JPzLUWidMcpqFx7.png)
+
+配置完毕。
+
 # 遇到的问题
 
 ## VisualStudio 产生的.ipch文件可以删除吗？
