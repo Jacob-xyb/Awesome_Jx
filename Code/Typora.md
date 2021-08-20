@@ -164,3 +164,5 @@ PicGo(app)  --  找到PicGo.exe所在路径
 
 这样设置的话会在 `Typora` 内进行缓存，缓存文件夹：`C:\Users\useID\AppData\Roaming\Typora\typora-user-images`
 
+# Math
+
