@@ -526,11 +526,54 @@ git config --global http.sslVerify "false"
 
 - 然后再执行 `git clone 项目地址` 即可。
 
-## LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+## 连接问题
+
+### LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
 
 梯子将配置信息写入了 `~/.gitconfig` 里面，使用以下命令即可：
 
 ```python
 git config --global http.sslBackend "openssl" 
+```
+
+## ssh: connect to host github.com port 22: Connection timed out
+
+- 前提
+
+`C:\Users\userName\.ssh` 目录下是有公钥和秘钥文件的，没有的请去配钥匙，不然无法使用ssh加密。
+
+- 缘由
+
+```cpp
+->git pull
+ssh: connect to host github.com port 22: Connection timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+->ssh -T git@github.com
+ssh: connect to host github.com port 22: Connection timed out
+```
+
+- 解决方案
+
+`C:\Users\userName\.ssh` 目录下创建一个文件 `config`，复制以下内容
+
+```cpp
+Host github.com
+User yourEmail
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+```
+
+里面需要改动内容只有`yourEmail`！
+
+- 测试
+
+```cpp
+ssh -T git@github.com
 ```
 
