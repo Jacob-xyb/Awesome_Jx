@@ -166,3 +166,85 @@ PicGo(app)  --  找到PicGo.exe所在路径
 
 # Math
 
+## 基本语法
+
+### 展现形式
+
+- 在正文中的`LaTeX`公式用`$...$`定义行内公式，`$$...$$`单独居中显示
+
+### 希腊字母
+
+| 显示 |   命令   | 显示 |  命令  |
+| :--: | :------: | :--: | :----: |
+|  α   |  \alpha  |  β   | \beta  |
+|  γ   |  \gamma  |  δ   | \delta |
+|  ε   | \epsilon |  ζ   | \zeta  |
+|  η   |   \eta   |  θ   | \theta |
+|  ι   |  \iota   |  κ   | \kappa |
+|  λ   | \lambda  |  μ   |  \mu   |
+|  ν   |   \nu    |  ξ   |  \xi   |
+|  π   |   \pi    |  ρ   |  \rho  |
+|  σ   |  \sigma  |  τ   |  \tau  |
+|  υ   | \upsilon |  φ   |  \phi  |
+|  χ   |   \chi   |  ψ   |  \psi  |
+|  ω   |  \omega  |      |        |
+
+- 示例：
+
+  `$\alpha$`： $\alpha$
+
+- 需要大写希腊字母时，首字母大写即可
+
+  `$\Alpha$`：$\Alpha$
+
+# 常见符号
+
+| 显示 | 命令 | 显示 | 命令 |
+| :--: | :-----: | :--: | :--: |
+| ${x}\cdot{y}$  | {x}\cdot{y} |    ${x}*{y}$    |    {x}*{y}    |
+| ${x}\colon{y}$ | {x}\colon{y} | ${x}\times{y}$  | {x}\times{y}  |
+| $\ddots$ | \ddots | $\breve{x}$ | \breve{x} |
+|   ${x}.{y}$    |   {x}.{y}    | ${x},{y}$ | {x},{y} |
+| $\dot{x}$ | \dot{x} | $\ddot{x}$ | \ddot{x} |
+|                |              | $\widehat{xxx}$ | \widehat{xxx} |
+| $\acute{x}$ | \acute{x} | $\check{x}$ | \check{x} |
+|  $\grave{x}$   |  \grave{x}   | $\vdots$ | \vdots |
+|  |  | | |
+|  |  | | |
+|  |  | | |
+|  |  | | |
+|  |  | | |
+|  |  | | |
+
+```cpp
+$\cdot$[公式]$\vdots$[公式][公式][公式][公式][公式][公式][公式][公式]$+$[公式][公式][公式]$-$[公式]$;$[公式][公式][公式]$?$[公式][公式]$\div$[公式][公式]$\ddot{x}$[公式]$=$[公式][公式]$\tilde{x}$[公式]$\neq$[公式]$\bar{x}$[公式]$\hat{x}$[公式]$\dotsm$[公式]$\vec{x}$[公式]$\dddot{x}$[公式]$\dotso$[公式]$\widetilde{xxx}$[公式]$\backslash$[公式]$/$[公式]$\bracevert$[公式]$]$[公式]$\smallsetminus$[公式]$\lVert$[公式]$\lbrace$[公式]$\arrowvert$[公式]$\rVert$[公式]$\rbrace$[公式][公式][公式]$\lgroup$[公式]$\langle$[公式]$\lvert$[公式]$\rgroup$[公式]$\rangle$[公式]$\rvert$[公式]$[$[公式]$\lmoustache$[公式]$\rmoustache$[公式]$\lceil$[公式]$\rceil$[公式]$\lfloor$[公式]$\rfloor$
+```
+
+
+
+## 修饰
+
+### 上下标
+
+上标：`^` 	下标：`_`
+
+举例：`$C_n^2$`：$C_n^2$
+
+### 矢量
+
+- 单个字母矢量：`\vec`即可（vector）
+
+  `$\vec{i}$` or `$\vec i$` ：$\vec{i}$ 
+
+- 多个字母就不要用空格了
+
+  `$\vec{ij}$` : $\vec{ij}$ 		`$\vec ij$` ： $\vec ij$
+
+- 比较复杂的左右箭头
+
+  `$\overrightarrow x$ ` : $\overrightarrow x$ 	`$\overrightarrow {x}$` : $\overrightarrow {x}$
+
+  `$\overleftarrow x$` : $\overleftarrow x$  `$\overleftarrow {x}$  ` : $\overleftarrow {x}$  
+
+### 字体
+
