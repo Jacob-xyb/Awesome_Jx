@@ -197,30 +197,79 @@ PicGo(app)  --  找到PicGo.exe所在路径
 
   `$\Alpha$`：$\Alpha$
 
-# 常见符号
+### 常见符号
 
 | 显示 | 命令 | 显示 | 命令 |
 | :--: | :-----: | :--: | :--: |
 | ${x}\cdot{y}$  | {x}\cdot{y} |    ${x}*{y}$    |    {x}*{y}    |
 | ${x}\colon{y}$ | {x}\colon{y} | ${x}\times{y}$  | {x}\times{y}  |
-| $\ddots$ | \ddots | $\breve{x}$ | \breve{x} |
-|   ${x}.{y}$    |   {x}.{y}    | ${x},{y}$ | {x},{y} |
+|     ${x}.{y}$     |     {x}.{y}     |    ${x},{y}$    |    {x},{y}    |
+| ${x}\pm{y}$ | {x}\pm{y} | ${x}\over{y}$ | {x}\over{y} |
+|     $\vdots$      |     \vdots      |    $\ddots$     |    \ddots     |
 | $\dot{x}$ | \dot{x} | $\ddot{x}$ | \ddot{x} |
-|                |              | $\widehat{xxx}$ | \widehat{xxx} |
+| $\breve{x}$ | \breve{x} | $\widehat{xxx}$ | \widehat{xxx} |
 | $\acute{x}$ | \acute{x} | $\check{x}$ | \check{x} |
-|  $\grave{x}$   |  \grave{x}   | $\vdots$ | \vdots |
-|  |  | | |
-|  |  | | |
-|  |  | | |
-|  |  | | |
-|  |  | | |
-|  |  | | |
+|  $\grave{x}$   |  \grave{x}   |   $\tilde{x}$   |   \tilde{x}   |
+| $\neq$ | \neq | $\bar{x}$ | \bar{x} |
+| $\hat{x}$ | \hat{x} | $\dotsm$ | \dotsm |
+| $\vec{x}$ | \vec{x} |    $\dotso$     |    \dotso     |
+| $\widetilde{xxx}$ | \widetilde{xxx} | $\dddot{x}$ | \dddot{x} |
+| $\backslash$ | \backslash | $\bracevert$ | \bracevert |
+| $\smallsetminus$ | \smallsetminus |  $\arrowvert$   |  \arrowvert   |
+| $\lbrace$ | \lbrace |    $\lVert$     |    \lVert     |
+| $\rbrace$ | \rbrace | $\rVert$ | \rVert |
+| $\lgroup$ | \lgroup | $\lvert$ | \lvert |
+| $\rgroup$ | \rgroup |    $\rvert$     |    \rvert     |
+| $\langle$ | \langle | $\lfloor$ | \lfloor |
+| $\rangle$ | \rangle | $\rfloor$ | \rfloor |
+| $\lmoustache$ | \lmoustache | $\lceil$ | \lceil |
+| $\rmoustache$ | \rmoustache | $\rceil$ | \rcei |
+| ${x}\quad{y}$ | {x}\quad{y} |  |  |
 
-```cpp
-$\cdot$[公式]$\vdots$[公式][公式][公式][公式][公式][公式][公式][公式]$+$[公式][公式][公式]$-$[公式]$;$[公式][公式][公式]$?$[公式][公式]$\div$[公式][公式]$\ddot{x}$[公式]$=$[公式][公式]$\tilde{x}$[公式]$\neq$[公式]$\bar{x}$[公式]$\hat{x}$[公式]$\dotsm$[公式]$\vec{x}$[公式]$\dddot{x}$[公式]$\dotso$[公式]$\widetilde{xxx}$[公式]$\backslash$[公式]$/$[公式]$\bracevert$[公式]$]$[公式]$\smallsetminus$[公式]$\lVert$[公式]$\lbrace$[公式]$\arrowvert$[公式]$\rVert$[公式]$\rbrace$[公式][公式][公式]$\lgroup$[公式]$\langle$[公式]$\lvert$[公式]$\rgroup$[公式]$\rangle$[公式]$\rvert$[公式]$[$[公式]$\lmoustache$[公式]$\rmoustache$[公式]$\lceil$[公式]$\rceil$[公式]$\lfloor$[公式]$\rfloor$
-```
+### 集合
 
+|       显示       |      命令      |      显示       |     命令      |
+| :--------------: | :------------: | :-------------: | :-----------: |
+|      $\in$       |      \in       |    $\notin$     |    \notin     |
+|  $\nsubseteqq$   |  \nsubseteqq   |    $\subset$    |    \subset    |
+|   $\emptyset$    |   \emptyset    |    $\supset$    |    \supset    |
+|     $\nabla$     |     \nabla     |   $\subseteq$   |   \subseteq   |
+|  $\nsubseteqq$   |  \nsubseteqq   |  $\nsubseteq$   |  \nsubseteq   |
+|  $\nsupseteqq$   |  \nsupseteqq   |  $\nsupseteq$   |  \nsupseteq   |
+|  $\subsetneqq$   |  \subsetneqq   |  $\subsetneq$   |  \subsetneq   |
+|  $\supsetneqq$   |  \supsetneqq   |  $\supsetneq$   |  \supsetneq   |
+| $\varsubsetneqq$ | \varsubsetneqq | $\varsubsetneq$ | \varsubsetneq |
+| $\varsupsetneqq$ | \varsupsetneqq | $\varsupsetneq$ | \varsupsetneq |
+|    $\bigcap$     |    \bigcap     |    $\bigvee$    |    \bigvee    |
+|    $\bigcup$     |    \bigcup     |   $\bigwedge$   |   \bigwedge   |
+|   $\biguplus$    |   \biguplus    |   $\bigsqcup$   |   \bigsqcup   |
+|    $\Subset$     |    \Subset     |    $\Supset$    |    \Supset    |
+|   $\subseteqq$   |   \subseteqq   |  $\supseteqq$   |  \supseteqq   |
+|   $\sqsubset$    |   \sqsubset    |   $\sqsupset$   |   \sqsupset   |
+|    $\forall$     |    \forall     |    $\exists$    |    \exists    |
 
+### 函数公式表
+
+- 没有列举的函数可以类推
+
+|  显示  | 命令 |    显示     |   命令    |
+| :----: | :--: | :---------: | :-------: |
+| $\sin$ | \sin | $\sin^{-1}$ | \sin^{-1} |
+| $\cos$ | \cos​ | $\cos^{-1}$ | \cos^{-1} |
+| $\tan$ | \tan | $\tan^{-1}$ | \tan^{-1} |
+| $\det$ | \det |   $\dim$    |   \dim    |
+| $\inf$ | \inf |   $\arg$    |   \arg    |
+| $\log$ | \log |    $\ln$    |    \ln    |
+
+### 箭头
+
+- 太多了。。不定期更新常用的吧
+
+|       显示        |      命令       |        显示        |       命令       |
+| :---------------: | :-------------: | :----------------: | :--------------: |
+| $\Leftrightarrow$ | \Leftrightarrow | $\nLeftrightarrow$ | \nLeftrightarrow |
+|   $\Rightarrow$   |   \Rightarrow   |    $\Leftarrow$    |    \Leftarrow    |
+| $\leftrightarrow$ | \leftrightarrow | $\nleftrightarrow$ | \nleftrightarrow |
 
 ## 修饰
 
@@ -247,4 +296,153 @@ $\cdot$[公式]$\vdots$[公式][公式][公式][公式][公式][公式][公式][
   `$\overleftarrow x$` : $\overleftarrow x$  `$\overleftarrow {x}$  ` : $\overleftarrow {x}$  
 
 ### 字体
+
+- Jacob
+
+|       显示       |      命令      | 字体 |
+| :--------------: | :------------: | :--: |
+| $\mathbf{Jacob}$ | \mathbf{Jacob} | 加粗 |
+| $\mathit{Jacob}$ | \mathit{Jacob} | 斜体 |
+
+## 数学公式表
+
+|             显示              |            命令             | 类型 |
+| :---------------------------: | :-------------------------: | :--: |
+|        $\frac{n}{n-1}$        |        \frac{n}{n-1}        | 分式 |
+|        $\sqrt[n]{ab}$         |        \sqrt[n]{ab}         | 根式 |
+|          $\sqrt{ab}$          |          \sqrt{ab}​          | 根式 |
+|         $\log_{a}{b}$         |         \log_{a}{b}         | 对数 |
+|           $\lg{ab}$           |           \lg{ab}           | 对数 |
+|            $\int$             |            \int             | 积分 |
+|        $\int_{a}^{b}$         |        \int_{a}^{b}         | 积分 |
+| $\frac{\text{d}x}{\text{d}y}$ | \frac{\text{d}x}{\text{d}y} | 微分 |
+|   $\lim_{a \rightarrow b}$    |   \lim_{a \rightarrow b}    | 极限 |
+
+## 常见模板
+
+### 二次方程求解
+
+   ```cpp
+\mathbf{a*x^2+b*x+c}\\
+x=\frac{{-b}\pm{\sqrt{b^2-4ac}}}{2a}\\
+x={{-b\pm\sqrt{b^2-4ac}}\over{2a}}
+   ```
+
+
+$$
+\mathbf{a*x^2+b*x+c}\\
+x=\frac{{-b}\pm{\sqrt{b^2-4ac}}}{2a}\\
+x={{-b\pm\sqrt{b^2-4ac}}\over{2a}}
+$$
+
+### 矩阵
+
+- 基本示例
+
+```cpp
+\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{bmatrix}
+```
+
+
+$$
+\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{bmatrix}
+$$
+
+- 基本语法
+
+  在起始和结束位置可以调整矩阵边框
+
+```cpp
+matrix  ：无边框
+pmatrix ：小括号边框
+bmatrix ：中括号边框
+Bmatrix ：大括号边框
+vmatrix ：单竖线边框
+Vmatrix ：双竖线边框
+```
+
+- 省略元素矩阵示例
+
+```cpp
+\begin{bmatrix}
+{a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+{a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{m1}}&{a_{m2}}&{\cdots}&{a_{mn}}\\
+\end{bmatrix}
+```
+
+$$
+\begin{bmatrix}
+{a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+{a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{m1}}&{a_{m2}}&{\cdots}&{a_{mn}}\\
+\end{bmatrix}
+$$
+
+### 方程组
+
+- 比较复杂，记住模板即可
+- equation环境
+
+```cpp
+\begin{equation}
+% \begin{equation*} 加'*'去掉公式编号
+\left\{
+\begin{aligned}     %请使用'aligned'或'align*'
+a_1x+b_1y+c_1z &= d_1 \\     %加'&'指定对齐位置
+a_2x+b_2y+c_2z &= d_2 \\
+a_3x+b_3y+c_3z &= d_3 \\
+\end{aligned}
+\right.
+\end{equation}
+% \end{equation*}   加'*'去掉公式编号
+
+% 注意：在 markdown 环境下，某些特殊字符，如'\', '*'等，会首先被 markdown 语法转义，然后再被 Latex 转义。
+% 因此有时候 '\{'需要写作'\\{'，'*'需要写作'\*'，'\\'需要写作'\\\\'等，视不同的解释环境而定
+```
+
+
+$$
+\begin{equation}
+% \begin{equation*} 加'*'去掉公式编号
+\left\{
+\begin{aligned}     %请使用'aligned'或'align*'
+a_1x+b_1y+c_1z &= d_1 \\     %加'&'指定对齐位置
+a_2x+b_2y+c_2z &= d_2 \\
+a_3x+b_3y+c_3z &= d_3 \\
+\end{aligned}
+\right.
+\end{equation}
+% \end{equation*}   加'*'去掉公式编号
+% 注意：在 markdown 环境下，某些特殊字符，如'\', '*'等，会首先被 markdown 语法转义，然后再被 Latex 转义。
+% 因此有时候 '\{'需要写作'\\{'，'*'需要写作'\*'，'\\'需要写作'\\\\'等，视不同的解释环境而定
+$$
+
+- cases环境
+
+```cpp
+\begin{cases}
+&a_1x+b_1y+c_1z&=&d_1\\
+&a_2x+b_2y+c_2z&=&d_2\\
+&a_3x+b_3y+c_3z&=&d_3\\
+\end{cases}
+```
+
+$$
+\begin{cases}
+&a_1x+b_1y+c_1z&=&d_1\\
+&a_2x+b_2y+c_2z&=&d_2\\
+&a_3x+b_3y+c_3z&=&d_3\\
+\end{cases}
+$$
 
