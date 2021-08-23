@@ -166,6 +166,8 @@ PicGo(app)  --  找到PicGo.exe所在路径
 
 # Math
 
+- [一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
+
 ## 基本语法
 
 ### 展现形式
@@ -211,8 +213,8 @@ PicGo(app)  --  找到PicGo.exe所在路径
 | $\acute{x}$ | \acute{x} | $\check{x}$ | \check{x} |
 |  $\grave{x}$   |  \grave{x}   |   $\tilde{x}$   |   \tilde{x}   |
 | $\neq$ | \neq | $\bar{x}$ | \bar{x} |
-| $\hat{x}$ | \hat{x} | $\dotsm$ | \dotsm |
-| $\vec{x}$ | \vec{x} |    $\dotso$     |    \dotso     |
+| $\hat{x}$ | \hat{x} | ${x}\dotsm{y}$ | {x}\dotsm{y} |
+| $\vec{x}$ | \vec{x} |    ${x}\dotso{y}$    | {x}\dotso{y} |
 | $\widetilde{xxx}$ | \widetilde{xxx} | $\dddot{x}$ | \dddot{x} |
 | $\backslash$ | \backslash | $\bracevert$ | \bracevert |
 | $\smallsetminus$ | \smallsetminus |  $\arrowvert$   |  \arrowvert   |
@@ -317,6 +319,7 @@ PicGo(app)  --  找到PicGo.exe所在路径
 |        $\int_{a}^{b}$         |        \int_{a}^{b}         | 积分 |
 | $\frac{\text{d}x}{\text{d}y}$ | \frac{\text{d}x}{\text{d}y} | 微分 |
 |   $\lim_{a \rightarrow b}$    |   \lim_{a \rightarrow b}    | 极限 |
+|       $\sum_{n=1}^Na_n$       |       \sum_{n=1}^Na_n       | 求和 |
 
 ## 常见模板
 
@@ -444,5 +447,70 @@ $$
 &a_2x+b_2y+c_2z&=&d_2\\
 &a_3x+b_3y+c_3z&=&d_3\\
 \end{cases}
+$$
+
+## 进阶技巧
+
+### 行间公式和独立公式
+
+```cpp
+//行间公式
+$...$
+    
+//独立公式
+$$
+...
+$$
+```
+
+但是有很多同时有上下标的公式，在行间和独立下的形式是不同的：
+
+对于：`p = \sum_{n=1}^Na_n`
+
+- 行间
+
+$p = \sum_{n=1}^Na_n$
+
+- 独立
+
+$$
+p = \sum_{n=1}^Na_n
+$$
+
+这是由于行间和独立具有默认的变现形式，可以理解为行间 `\nolimits` 的上下标；独立是 `\limits` 的上下标。
+
+因此在 `p = \sum_{n=1}^Na_n` 中， `p = \sum` 后面加入 `\nolimits` 或 `\limits` 可以改变原有默认的格式。
+
+- `$p = \sum\limits_{n=1}^Na_n$`
+
+$p = \sum\limits_{n=1}^Na_n$
+
+- `$p = \sum\nolimits_{n=1}^Na_n$`
+
+$$
+p = \sum\nolimits_{n=1}^Na_n
+$$
+
+### 改变公式颜色
+
+先敲一段麦克斯韦方程组
+$$
+e^{ix} = \cos x + i\sin x
+$$
+
+- 字体颜色关键词 `\color` 然后填入需要的颜色即可
+
+  `\color{red} e^{ix} = \cos x + i\sin x`
+
+$$
+\color{red} e^{ix} = \cos x + i\sin x
+$$
+
+- 局部更改，就需要用 `{}` 将需要改变颜色的`内容`和`\color`括起来就即可
+
+  ` e^{i\color{red}{x} = \cos color{red}{x} + i\sin color{red}{x}`
+
+$$
+e^{i{\color{red}x}} = \cos {\color{red}x} + i\sin {\color{red}x}
 $$
 
