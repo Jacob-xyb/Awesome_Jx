@@ -196,6 +196,20 @@ VSCode的工作区和文件夹是有区别的，工作区是为了更好地管�
 
 ![image-20210712172634364](https://i.loli.net/2021/07/12/3kHtF7G5WeTIUXd.png)
 
+## 插件相关设置
+
+### Code Runner
+
+- 使用 Code Runner 时切换目录
+
+  `shift + ctrl + p` 打开 `setting设置`
+  
+  ![image-20210824153541121](https://i.loli.net/2021/08/24/36Eb5HICQDmiayZ.png)
+  
+  ![image-20210824154258211](https://i.loli.net/2021/08/24/BOkIG8RSsv7DugM.png)
+  
+  python那一行改为：`"python": "cd $dir \n python -u $fileName",` 即可。
+
 # VSCode for C++
 
 ## 如何用VSCode写C++
