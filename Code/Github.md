@@ -14,7 +14,7 @@
 
 ```python
 git log				# 查看日志信息
-git relog				# 查看一行日志
+git reflog				# 查看一行日志
 git remote -v		# 查看当前项目的远程git地址
 cat .git/HEAD		# 查看当前HEAD
 ```
