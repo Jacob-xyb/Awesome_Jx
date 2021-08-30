@@ -109,6 +109,53 @@ h6.md-focus:before {
 
 [Typora主题下载](https://theme.typora.io/)
 
+### 修改块代码的颜色
+
+我现在块代码的颜色：
+
+![image-20210830222316898](https://i.loli.net/2021/08/30/inYKs14u73vTByE.png)
+
+- __打开主题文件夹__
+
+  设置  ->  偏好设置  ->  打开主题文件夹
+
+- __打开github.css__
+
+  ```css
+  .md-fences,
+  code,
+  tt {
+      border: 1px solid #e7eaed;
+      background-color: #f8f8f8;
+      border-radius: 3px;
+      padding: 0;
+      padding: 2px 4px 0px 4px;
+      font-size: 0.9em;
+  }
+  //这是需要改的内容↓
+  code {	
+      background-color: #f8e8ea;	//背景色
+      padding: 2px 2px 2px 2px;	//间距：上 右 下 左
+      color: red;					//字体颜色
+  }
+  //这是需要改的内容↑
+  .md-fences {
+      margin-bottom: 15px;
+      margin-top: 15px;
+      padding-top: 8px;
+      padding-bottom: 6px;
+  }
+  
+  
+  .md-task-list-item > input {
+    margin-left: -1.3em;
+  }
+  
+  @media print {
+  ```
+
+- 保存重启即可
+
 # Typora 联动 Picgo
 
 ## PicGo SM.MS图床设置
