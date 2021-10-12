@@ -188,6 +188,18 @@ git push origin --delete develop	# 删除远程仓库
 git push origin:develop			# 推送至服务器才行
 ```
 
+### 覆盖分支
+
+- 将dev分支完全覆盖test分支
+
+```python
+# 1.首先切换到test分支
+git checkout test
+# 2.将远程上dev分支完全覆盖test分支
+git reset --hard origin/dev
+# 3.注意现在只是本地test分支被覆盖了，因此还需要强制推送一次
+git push -f
+```
 
 ## git config 配置
 
