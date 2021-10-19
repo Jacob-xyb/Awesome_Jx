@@ -54,23 +54,28 @@ c.NotebookApp.browser = 'chrome'
 ## 安装主题
 
 ```python
-pip install --upgrade jupyterthemes		# anaconda prompt
+pip install --upgrade jupyterthemes		# anaconda prompt || cmd
 
 # 常用操作
 jt -l		# 查看主题
 jt -r		# 恢复默认主题
 ```
 
+## 可用参数
+
+![img](https://img-blog.csdn.net/2018030513433616)
+
 ## 推荐主题
 
 ```python
 jt -t chesterish -fs 14 -cellw 85% -ofs 13 -dfs 11 -T
-jt -t chesterish -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N		# 1
+jt -t chesterish -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N	# 1
 jt -t grade3 -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t gruvboxd -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N		# 1
 jt -t gruvboxl -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t monokai -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t oceans16 -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
+jt -t oceans16 -f fira -fs 13 -cellw 90% -ofs 11 -dfs 11 -T			# 1
 jt -t onedork -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t solarizedd -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t solarizedl -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
@@ -78,6 +83,10 @@ jt -t solarizedl -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 # 含义
 -f(字体)  -fs(字体大小) -cellw(占屏比或宽度)  -ofs(输出段的字号)  -dfs(表头的字号) -T(显示工具栏)  -N(显示自己主机名)
 ```
+
+- 8:`jt -t oceans16 -f fira -fs 13 -cellw 90% -ofs 11 -dfs 11 -T`
+
+![img](https://img-blog.csdn.net/20180305134952457)
 
 ## 修改主题
 
