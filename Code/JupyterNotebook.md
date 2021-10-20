@@ -115,3 +115,29 @@ font-style: normal
 ## 个人配置
 
 ![img](https://i.loli.net/2021/06/11/HLFnG9CArI6WamR.png?ynotemdtimestamp=1626252559989)
+
+# 遇到的问题
+
+## pytorch
+
+### matplotlib.pyplot出现服务器挂掉、崩溃的问题
+
+点击启动Jupyter notebook的终端程序，终端上会记录Jupyter notebook的运行信息，可以从中查看错误原因
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201201215552550.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY3MTQxOA==,size_16,color_FFFFFF,t_70)
+
+```cpp
+OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.
+OMP: Hint This means that multiple copies of the OpenMP runtime have been linked into the program. That is dangerous, since it can degrade performance or cause incorrect results. The best thing to do is to ensure that only a single OpenMP runtime is linked into the process, e.g. by avoiding static linking of the OpenMP runtime in any library. As an unsafe, unsupported, undocumented workaround you can set the environment variable KMP_DUPLICATE_LIB_OK=TRUE to allow the program to continue to execute, but that may cause crashes or silently produce incorrect results. For more information, please see http://www.intel.com/software/products/support/.
+[I 21:55:26.126 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+kernel 4e65633e-7300-4a63-a0fc-1df4e657672f restarted
+```
+
+解决：
+在pytorch中导入以下模块:
+
+```python
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+```
+
