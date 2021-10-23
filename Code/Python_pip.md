@@ -38,3 +38,23 @@ http://pypi.mirrors.ustc.edu.cn/simple/
 ---
 
 tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
+
+## Pytorch
+
+- Mac安装教程
+
+  打开 pytorch.org 官网，可以选择安装器，Python版本，CUDA 版本。
+
+  例如 Mac Conda Python3.6 CUDA 9.0 的安装命令为：
+
+  ```python
+  conda install pytorch torchvision -c pytorch
+  ```
+
+  ![PyTorch  Mac 安装教程](http://pytorchchina.com/wp-content/uploads/2018/12/WechatIMG1313.jpeg)
+
+  如果是更加常见的 pip 安装的命令则是：
+
+  ```
+  pip3 install torch torchvision
+  ```
