@@ -54,11 +54,12 @@ c.NotebookApp.browser = 'chrome'
 ## 安装主题
 
 ```python
-pip install --upgrade jupyterthemes		# anaconda prompt || cmd
+pip install jupyterthemes		# anaconda prompt || cmd
 
 # 常用操作
 jt -l		# 查看主题
 jt -r		# 恢复默认主题
+jt -h		# 查看帮助
 ```
 
 ## 可用参数
@@ -141,3 +142,4 @@ import os
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 ```
 
+ 
