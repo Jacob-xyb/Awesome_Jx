@@ -113,6 +113,12 @@ font-style: normal
 
 # Nbextensions
 
+## 安装
+
+试了很多次，conda暂时没有这个源，`pip`是可以安装成功的。
+
+`pip install jupyter_contrib_nbextensions`
+
 ## 个人配置
 
 ![img](https://i.loli.net/2021/06/11/HLFnG9CArI6WamR.png?ynotemdtimestamp=1626252559989)
