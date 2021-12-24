@@ -269,7 +269,7 @@ __tips:__
 
 ### 全局忽略
 
-- 首先找到全局目录，也就是`C:\Users\name\.gitconfig`所在的目录，Mac一次类推。在全局目录下创建一个文件`.gitignore_global`，里面写好需要忽略的内容，使用以下命令进行连接，这样在全局忽略就可以生效了，`git config --global --list`可以查看检查一下。
+- 首先找到全局目录，也就是`C:\Users\name\.gitconfig`所在的目录，Mac以此类推。在全局目录下创建一个文件`.gitignore_global`，里面写好需要忽略的内容，使用以下命令进行连接，这样在全局忽略就可以生效了，`git config --global --list`可以查看检查一下。
 - __tips:__全局忽略的好处就是可以删除本地的`.gitignore`文件，GitHub上就不会显示项目中忽略了什么文件了。
 
 ```python

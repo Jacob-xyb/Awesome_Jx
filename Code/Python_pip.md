@@ -58,3 +58,21 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
   ```
   pip3 install torch torchvision
   ```
+
+# Python小型库安装
+
+## 局部敏感哈希包lshash
+
+[官方文档](https://github.com/kayzhu/LSHash)
+
+ 在使用局部敏感哈希算法的过程中，发现python有相关实现，但是在下载时报错，很让人抓狂！ 
+
+![](https://img2018.cnblogs.com/blog/1459610/201810/1459610-20181025180207960-1587585797.png)
+
+[解决方法](https://github.com/kayzhu/LSHash/pull/18)：lshash 0.0.4dev 版本的包基于旧版本python开发，新版的python使用会有问题，所以作者搞了个 lshash3 版本，安装时使用
+
+```python
+pip install lshash3
+```
+
+ 命令就可以了。注意：安装时依赖gcc，使用mac的同学可能麻烦点～ 
