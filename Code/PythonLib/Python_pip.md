@@ -69,8 +69,11 @@ pip安装是默认国外的镜像，速度可能会很慢
 web:
 
 ```python
-https://pypi.tuna.tsinghua.edu.cn/simple 
-https://pypi.douban.com/simple
+https://pypi.tuna.tsinghua.edu.cn/simple		# 清华大学
+https://pypi.douban.com/simple					# 豆瓣(douban) 
+https://pypi.mirrors.ustc.edu.cn/simple/		# 中国科技大学 
+http://mirrors.aliyun.com/pypi/simple/			# 阿里云 
+http://pypi.mirrors.ustc.edu.cn/simple/			# 中国科学技术大学
 ```
 
 example：
@@ -145,25 +148,6 @@ TensorFlow 2.4.0 已经适配 python 3.8
 
 `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ tensorflow==2.4.0`
 
-- 更多国内源：
-
-```python
-阿里云 
-http://mirrors.aliyun.com/pypi/simple/
-
-中国科技大学 
-https://pypi.mirrors.ustc.edu.cn/simple/
-
-豆瓣(douban) 
-http://pypi.douban.com/simple/
-
-清华大学 
-https://pypi.tuna.tsinghua.edu.cn/simple/
-
-中国科学技术大学 
-http://pypi.mirrors.ustc.edu.cn/simple/
-```
-
 ---
 
 tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
@@ -187,6 +171,26 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
   ```
   pip3 install torch torchvision
   ```
+
+## PyQt5
+
+- 在线安装
+
+  ```python
+  pip install PyQt5 -i https://pypi.douban.com/simple
+  ```
+
+- 离线安装
+
+  PyQt5_sip，下载链接：[https://pypi.org/project/PyQt5-sip/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2FPyQt5-sip%2F%23files)
+
+  Click，下载链接：[https://pypi.org/project/click/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2Fclick%2F%23files)
+
+  PyQt5-tools，下载链接：[https://pypi.org/project/pyqt5-tools/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2Fpyqt5-tools%2F%23files)
+
+  python_dotenv，下载链接：[https://pypi.org/project/python-dotenv/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2Fpython-dotenv%2F%23files) 
+
+  PyQt5，下载链接：[https://pypi.org/project/PyQt5/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2FPyQt5%2F%23files)
 
 # Python小型库安装
 
