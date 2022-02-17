@@ -88,6 +88,39 @@ pip install PyQt5 -i https://pypi.douban.com/simple
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
+### conda虚拟环境pip下载
+
+这是一个非常不好弄的问题，查看当前的环境的指令一般是：`pip list` 。但是往往有虚拟环境存在时，打印出来的是全局的包列表，显然用 `conda list` 才是当前环境安装的包。
+
+问题出现了，`conda create -n env_name` 创建一个新的虚拟环境后，直接 `pip install` 发现并没有将依赖包安装到当前环境，而是安装到 `base` 环境中了，试了千百种方法，踩过无数大坑，最终想出一种比较稳妥的方法。
+
+- 为什么执着于 `pip install` 安装？
+
+  `conda install` 很香，但是
+
+  ```python
+  # 1.有些包conda无法安装；
+  # 2.pip安装更智能；
+  # 3.pip download 可以导入当前环境的所有包（这也是我用虚拟环境的原因，严格把控环境配置）
+  ```
+
+- `pip install` 是何物？
+
+  由于我最常用的电脑是有加密系统的，可能大家并没有我类似的烦恼，但是，我找出的方法 `有理可据，深入原理` 。
+
+  `pip install` 底层无非调用当前环境的 `pip.exe` (不限pip3.exe等等)，以这个角度出发，直接调用当前环境的 `pip.exe` 是不是就能完美解决问题呢。
+
+  事实证明的确如此
+
+  ```python
+  # 原代码
+  pip install package_name
+  # 替换成
+  D:\ProgramData\Anaconda3\envs\env_name\Scripts\pip.exe intall package_name
+  ```
+
+  `conda list` 即可查看是否安装成功。
+
 # pip 自动化安装
 
 ## 打包已安装的依赖包
@@ -182,15 +215,9 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
 
 - 离线安装
 
-  PyQt5_sip，下载链接：[https://pypi.org/project/PyQt5-sip/#files](https://pypi.org/project/PyQt5-sip/#files)
-
-  Click，下载链接：[https://pypi.org/project/click/#files](https://pypi.org/project/click/#files)
-
-  PyQt5-tools，下载链接：[https://pypi.org/project/pyqt5-tools/#files](https://pypi.org/project/pyqt5-tools/#files)
-
-  python_dotenv，下载链接：[https://pypi.org/project/python-dotenv/#files](https://pypi.org/project/python-dotenv/#files) 
-
-  PyQt5，下载链接：[https://pypi.org/project/PyQt5/#files](https://pypi.org/project/PyQt5/#files)
+  PyQt5_Qt5-5.15.2-py3-none-win_amd64.whl
+PyQt5_sip-12.9.1-cp38-cp38-win_amd64.whl
+  PyQt5-5.15.6-cp36-abi3-win_amd64.whl
 
 # Python小型库安装
 
