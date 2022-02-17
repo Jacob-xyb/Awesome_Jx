@@ -182,15 +182,15 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
 
 - 离线安装
 
-  PyQt5_sip，下载链接：[https://pypi.org/project/PyQt5-sip/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2FPyQt5-sip%2F%23files)
+  PyQt5_sip，下载链接：[https://pypi.org/project/PyQt5-sip/#files](https://pypi.org/project/PyQt5-sip/#files)
 
-  Click，下载链接：[https://pypi.org/project/click/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2Fclick%2F%23files)
+  Click，下载链接：[https://pypi.org/project/click/#files](https://pypi.org/project/click/#files)
 
-  PyQt5-tools，下载链接：[https://pypi.org/project/pyqt5-tools/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2Fpyqt5-tools%2F%23files)
+  PyQt5-tools，下载链接：[https://pypi.org/project/pyqt5-tools/#files](https://pypi.org/project/pyqt5-tools/#files)
 
-  python_dotenv，下载链接：[https://pypi.org/project/python-dotenv/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2Fpython-dotenv%2F%23files) 
+  python_dotenv，下载链接：[https://pypi.org/project/python-dotenv/#files](https://pypi.org/project/python-dotenv/#files) 
 
-  PyQt5，下载链接：[https://pypi.org/project/PyQt5/#files](https://links.jianshu.com/go?to=https%3A%2F%2Fpypi.org%2Fproject%2FPyQt5%2F%23files)
+  PyQt5，下载链接：[https://pypi.org/project/PyQt5/#files](https://pypi.org/project/PyQt5/#files)
 
 # Python小型库安装
 
