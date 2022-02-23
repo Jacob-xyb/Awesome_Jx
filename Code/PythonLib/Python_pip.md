@@ -211,13 +211,50 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
 
   ```python
   pip install PyQt5 -i https://pypi.douban.com/simple
+  pip install pyqt5-tools -i https://pypi.douban.com/simple
   ```
 
 - 离线安装
 
+  - 不带Designer版
+
+  ```python
+  # 提前下载所需安装包
+  pip download PyQt5 -i https://pypi.douban.com/simple
+      
+  # requirements.txt 大致内容
   PyQt5_Qt5-5.15.2-py3-none-win_amd64.whl
-PyQt5_sip-12.9.1-cp38-cp38-win_amd64.whl
+  PyQt5_sip-12.9.1-cp38-cp38-win_amd64.whl
   PyQt5-5.15.6-cp36-abi3-win_amd64.whl
+  
+  # 批量安装离线包
+  pip install --no-index -r .\requirements.txt
+  ```
+  
+  - 带Designer版
+  
+  ```python
+  # 提前安装下载所需安装包
+  pip download PyQt5 -i https://pypi.douban.com/simple
+  pip download pyqt5-tools -i https://pypi.douban.com/simple
+  
+  # 处理包的版本冲突(尽量跟随Designer的伴随包)
+  #	如果没有冲突就直接安装
+  
+  # requirements.txt 大致内容
+  PyQt5_Qt5-5.15.2-py3-none-win_amd64.whl
+  PyQt5_sip-12.9.1-cp38-cp38-win_amd64.whl
+  pyqt5_tools-5.15.4.3.2-py3-none-any.whl
+  pyqt5-5.15.4-cp36.cp37.cp38.cp39-none-win_amd64.whl
+  pyqt5_plugins-5.15.4.2.2-cp38-cp38-win_amd64.whl
+  python_dotenv-0.19.2-py2.py3-none-any.whl
+  qt5_tools-5.15.2.1.2-py3-none-any.whl
+  click-7.1.2-py2.py3-none-any.whl
+  qt5_applications-5.15.2.2.2-py3-none-win_amd64.whl
+  
+  # 批量安装离线包
+  pip install --no-index -r .\requirements.txt
+  ```
 
 # Python小型库安装
 
