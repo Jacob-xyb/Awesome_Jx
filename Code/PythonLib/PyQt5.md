@@ -1,3 +1,95 @@
+# PyQt5 安装与配置
+
+## 安装
+
+- 在线安装
+
+  ```python
+  pip install PyQt5 -i https://pypi.douban.com/simple
+  pip install pyqt5-tools -i https://pypi.douban.com/simple
+  ```
+
+- 离线安装
+
+  - 不带Designer版
+
+  ```python
+  # 提前下载所需安装包
+  pip download PyQt5 -i https://pypi.douban.com/simple
+      
+  # requirements.txt 大致内容
+  PyQt5_Qt5-5.15.2-py3-none-win_amd64.whl
+  PyQt5_sip-12.9.1-cp38-cp38-win_amd64.whl
+  PyQt5-5.15.6-cp36-abi3-win_amd64.whl
+  
+  # 批量安装离线包
+  pip install --no-index -r .\requirements.txt
+  ```
+
+  - 带Designer版
+
+  ```python
+  # 提前安装下载所需安装包
+  pip download PyQt5 -i https://pypi.douban.com/simple
+  pip download pyqt5-tools -i https://pypi.douban.com/simple
+  
+  # 处理包的版本冲突(尽量跟随Designer的伴随包)
+  #	如果没有冲突就直接安装
+  
+  # requirements.txt 大致内容
+  PyQt5_Qt5-5.15.2-py3-none-win_amd64.whl
+  PyQt5_sip-12.9.1-cp38-cp38-win_amd64.whl
+  pyqt5_tools-5.15.4.3.2-py3-none-any.whl
+  pyqt5-5.15.4-cp36.cp37.cp38.cp39-none-win_amd64.whl
+  pyqt5_plugins-5.15.4.2.2-cp38-cp38-win_amd64.whl
+  python_dotenv-0.19.2-py2.py3-none-any.whl
+  qt5_tools-5.15.2.1.2-py3-none-any.whl
+  click-7.1.2-py2.py3-none-any.whl
+  qt5_applications-5.15.2.2.2-py3-none-win_amd64.whl
+  
+  # 批量安装离线包
+  pip install --no-index -r .\requirements.txt
+  ```
+
+## 配置
+
+- step1
+
+  安装好后可以 `win` 搜索 `designer` 查看是否安装成功
+
+- step2
+
+  打开PyCharm，打开File—>Settings—>External Tools,点击加号来添加自己的工具
+
+  ```python
+  Name:QtDesigner
+  Group:Qt
+  Programs:F:\anaconda\Library\bin\designer.exe(这里是各位自己的designer路径，之前所看到的)
+  Working directory：$ProjectFileDir$
+  ```
+
+- step3
+
+  但是要在PyCharm中把界面的.ui文件转换为.py文件还需要后面的配置。
+
+  重复上述操作，配置pyuic：
+
+  ```python
+  Name:Pyuic
+  Group:Qt
+  Program:F:\anaconda\python.exe(各位自己的python路径)
+  Arguments：-m PyQt5.uic.pyuic $FileName$ -o $FileNameWithoutExtension$.py
+  Working directory：$FileDir$
+  ```
+
+## 测试
+
+回到PyCharm，Tools—>Qt—>QtDesigner，点击即可打开designer：
+
+然后创建一个最简单的界面，把这个界面保存（默认是保存在当前pycharm项目目录下，我这里命名“first.ui”）
+
+回到pycharm，可以看到工程目录下已经产生了first.ui，右键它，Qt—>Pyuic，点击后即可产生first.py文件，OK接下来就可以愉快地写代码了(⊙o⊙)…
+
 # PyQt5_Tutorial
 
 ## PyQt5.QtWidgets
@@ -66,6 +158,12 @@ def closeEvent(self, event):
         event.ignore()
 ```
 
+#### .mouseMoveEvent()
+
+```python
+mouseMoveEvent(self, QMouseEvent)
+```
+
 #### .frameGeometry()
 
 ```python
@@ -129,11 +227,34 @@ setToolTip(self, str)
 self.setToolTip('This is a <b>QWidget</b> widget')
 ```
 
+#### .setLayout()
+
+```python
+setLayout(self, QLayout)
+```
+
+#### .setMouseTracking()	
+
+```python
+setMouseTracking(self, bool)
+```
+
 #### .sizeHint()
 
 ```python
 # 提供一个默认的按钮大小
 sizeHint(self) -> QSize
+```
+
+#### .QKeyEvent()
+
+```python
+keyPressEvent(self, QKeyEvent)
+
+# 示例：
+def keyPressEvent(self, e):
+    if e.key() == Qt.Key_Escape:
+        self.close()
 ```
 
 ### QAbstractButton
@@ -366,6 +487,86 @@ QTextEdit(parent: QWidget = None)
 QTextEdit(str, parent: QWidget = None)
 ```
 
+### QLabel
+
+```python
+class QLabel(QFrame):
+
+QLabel(parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags())
+QLabel(str, parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags())
+```
+
+#### .move()
+
+```python
+# 修改控件位置，位置相对于父类而不是屏幕
+move(self, QPoint)
+move(self, int, int)
+```
+
+#### .setText()
+
+```python
+setText(self, str) 
+```
+
+### QLineEdit
+
+```python
+class QLineEdit(QWidget):
+    """
+    QLineEdit(parent: QWidget = None)
+    QLineEdit(str, parent: QWidget = None)
+    """
+```
+
+### QLCDNumber
+
+```python
+class QLCDNumber(QFrame):
+    """
+    QLCDNumber(parent: QWidget = None)
+    QLCDNumber(int, parent: QWidget = None)
+    """
+```
+
+#### .display()
+
+```python
+display(self, str)
+display(self, float)
+display(self, in	t)
+```
+
+### QAbstractSlider
+
+```python
+class QAbstractSlider(QWidget):
+    """ QAbstractSlider(parent: QWidget = None) """
+```
+
+#### .valueChanged()
+
+```python
+valueChanged(self, int) [signal]
+```
+
+### QSlider
+
+```python
+class QSlider(QAbstractSlider):
+    """
+    QSlider(parent: QWidget = None)
+    QSlider(Qt.Orientation, parent: QWidget = None)
+    """
+```
+
+#### .valueChanged()
+
+```python
+valueChanged(self, int) [signal]
+```
+
 ## QtCore
 
 `from PyQt5.QtWidgets import QName`
@@ -422,6 +623,74 @@ triggered(self, checked: bool = False) [signal]		# 触发一个信号
 
 # 示例：
 exitAct.triggered.connect(qApp.quit)
+```
+
+## QLayout
+
+`from PyQt5.QtWidgets import QName`
+
+```python
+class QLayout(__PyQt5_QtCore.QObject, QLayoutItem):
+    """
+    QLayout(QWidget)
+    QLayout()
+    """
+    
+class QBoxLayout(QLayout):
+    """ QBoxLayout(QBoxLayout.Direction, parent: QWidget = None) """
+```
+
+### QBoxLayout
+
+```python
+class QBoxLayout(QLayout):
+    """ QBoxLayout(QBoxLayout.Direction, parent: QWidget = None) """
+```
+
+#### .addLayout()
+
+```python
+addLayout(self, QLayout, stretch: int = 0)
+```
+
+### QHBoxLayout
+
+```python
+class QHBoxLayout(QBoxLayout):
+    
+QHBoxLayout()
+QHBoxLayout(QWidget)
+```
+
+### QGridLayout
+
+```python
+class QGridLayout(QLayout):
+    @typing.overload
+    def __init__(self, parent: QWidget) -> None: ...
+    @typing.overload
+    def __init__(self) -> None: ...
+```
+
+#### .addWidget()
+
+```python
+def addWidget(self, w: QWidget) -> None: ...
+def addWidget(self, a0: QWidget, row: int, column: int, alignment: typing.Union[QtCore.Qt.Alignment, QtCore.Qt.AlignmentFlag] = ...) -> None: ...
+def addWidget(self, a0: QWidget, row: int, column: int, rowSpan: int, columnSpan: int, alignment: typing.Union[QtCore.Qt.Alignment, QtCore.Qt.AlignmentFlag] = ...) -> None: ...
+```
+
+#### .addStretch()
+
+```python
+addStretch(self, stretch: int = 0)	# 在布局器中增加一个伸缩量，将nLayout的布局器的空白空间平均分配
+```
+
+#### .setSpacing()
+
+```python
+# 各个控件之间的上下间距
+def setSpacing(self, spacing: int) -> None: ...
 ```
 
 ## __sip.simplewrapper
