@@ -163,6 +163,39 @@ requirements.txt 内直接是文件名也可以。
 
 -y: 默认全部同意
 
+# 打包
+
+## pyinstaller
+
+```python
+# 安装
+pip install pyinstaller
+# 查看
+where pyinstaller
+# 基本语法
+-F，-onefile: 表示生成单个可执行文件，常用。
+-w, -windowed, -noconsole:表示去掉控制台窗口，这在GUI界面时非常有用。不过如果是命令行程序的话那就把这个选项删除吧！
+-p 表示你自己自定义需要加载的类路径，一般情况下用不到
+-i 表示可执行文件的图标。注意:图片后缀必须是.ico
+-c,console,-nowindowed:使用控制台，无窗口（默认）
+-D，-onedir：创建一个目录，包含EXE文件，但会依赖很多文件（默认选项）
+#  基本实例：pyinstaller -F myscript.py。
+```
+
+### 原理简介
+
+pyinstaller其实就是把python解释器和脚本打包成一个可执行文件，和编译成真正的机器码是完全两回事。所以打包不一定会提高运行效率，可能会降低运行效率，但是好处是在运行者机器上不用安装python和脚本所依赖的库。
+
+ 输入指定的脚本后，首先pyinstaller会分析该脚本所依赖的其他依赖，然后进行查找、复制，把所有相关的依赖都收集起来并惊醒加密处理，包括python解释器，最后把这些文件放在一个目录下，或者打包到一个可执行文件。然后就可以直接运行所生成的可执行文件。
+
+ 需要注意的是，使用pyinstaller打包生成的可执行文件，只能再和打包机器系统相同的环境下运行。32位python环境打包的程序可以运行在32/64位windows系统上。64位python环境打包的程序只能运行在64位windows系统上。所以如果想打包程序的话，建议使用32位python环境打包。
+
+### FAQs
+
+- 给程序换图标
+
+使用参数-i。如命令：`pyinstaller -F -i tupian\qq.ico ccc.py`。文件后缀名必须是.ico
+
 # Python大型库安装
 
 ## TensorFlow
