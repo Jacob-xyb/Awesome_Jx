@@ -93,6 +93,235 @@
 
 回到pycharm，可以看到工程目录下已经产生了first.ui，右键它，Qt—>Pyuic，点击后即可产生first.py文件，OK接下来就可以愉快地写代码了(⊙o⊙)…
 
+# Pydesigner
+
+## QMainWindow
+
+```python
+class QMainWindow(QWidget):
+    """ QMainWindow(parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags()) """
+```
+
+- QMainWindow 类中比较重要的方法
+
+|        方法        |                       描述                       |
+| :----------------: | :----------------------------------------------: |
+|    addToolBar()    |                    添加工具栏                    |
+|  centralWidget()   |     返回窗口中心的一个控件，未设置时返回NULL     |
+| setCentralWidget() | 设置窗口中心的控件，这个组件或占满所有剩余的区域 |
+|     menuBar()      |                返回一个菜单栏对象                |
+|    setMenuBar()    |                  设置菜单栏对象                  |
+|    statusBar()     |      返回一个状态栏对象,同时开启状态栏显示       |
+|   setStatusBar()   |                    设置状态栏                    |
+
+> 注意：QMainWindow不能设置布局（使用setLayout()方法)，因为它有自己的布局。
+
+### 创建主窗口
+
+```python
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
+from PyQt5.QtGui import QIcon
+
+
+# 创建了一个类的调用，这个类继承自QWidget
+class Example(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        # 使用继承自QWidget类的方法
+        # setGeometry()有两个作用：把窗口放到屏幕上并且设置窗口大小。
+        # 参数分别代表屏幕坐标的x、y和窗口大小的宽、高。也就是说这个方法是resize()和move()的合体。
+        self.setGeometry(300, 300, 300, 220)
+        self.setWindowTitle('Icon')
+        self.setWindowIcon(QIcon('..\\..\\image\\Globe.ico'))
+        self.show()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+```
+
+![image-20220302150203577](https://s2.loli.net/2022/03/02/ULl9jCwEmtb1OfM.png)
+
+### 关闭窗口
+
+```python
+import sys
+from PyQt5.QtWidgets import QWidget, QPushButton, QApplication
+from PyQt5.QtCore import QCoreApplication
+
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        # QPushButton(string text, parent = None)
+        # text参数是想要显示的按钮名称，parent参数是放在按钮上的组件，
+        # 这个例子中，父级组件就是我们创建的继承自 Qwidget 的 Example 类。
+        qbtn = QPushButton('Quit', self)
+        # 事件传递系统在PyQt5内建的single和slot机制里面。点击按钮之后，信号会被捕捉并给出既定的反应。
+        # QCoreApplication包含了事件的主循环，它能添加和删除所有的事件，instance()创建了一个它的实例。
+        # QCoreApplication是在QApplication里创建的。 点击事件和能终止进程并退出应用的quit函数绑定在了一起。
+        # 在发送者和接受者之间建立了通讯，发送者就是按钮，接受者就是应用对象。
+        qbtn.clicked.connect(QCoreApplication.instance().quit)
+        # qbtn.clicked.connect(self.close)    # 暂时认为是等价的
+
+        qbtn.resize(qbtn.sizeHint())
+        qbtn.move(50, 50)
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Quit button')
+        self.show()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+```
+
+![image-20220302150504521](https://s2.loli.net/2022/03/02/S2f6yk8Wm4tCjQH.png)
+
+## QWidget
+
+基础窗口控件QWidget类是所有用户界面对象的基类，所有的窗口和控件都直接或间接继承QWidget类。
+
+窗口控件（Widget，简称“控件”）是在PyQt中建立界面的主要元素。
+
+在PyQt中把没有嵌入到其他控件中的控件称为`窗口`，一般窗口都有边框、标题栏。
+
+窗口是指程序的整体界面，可以包含标题栏、菜单栏、工具栏、关闭按钮、最小化按钮、最大化按钮等；
+
+控件是指按钮、复选框、文本框、表格、进度条等这些组成程序的基本元素。
+
+一个程序可以有多个窗口，一个窗口也可以有多个控件。
+
+### 基本函数调用方法
+
+```python
+# -*- coding: UTF-8 -*-
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtCore import QSize
+
+app = QApplication(sys.argv)
+# == QWidge控件是一个用户界面的基本控件，它提供了基本的应用构造器。默认情况下，构造器是没有父级的，没有父级的构造器被称为窗口（window）。
+w = QWidget()
+# == 改变尺寸
+# setFixed > resize == setGeometry
+# == 改变尺寸 == resize()方法能改变控件的大小，这里的意思是窗口宽 int px，高 int px。
+w.resize(300, 200)
+# == 改变尺寸 == setFixed..()固定宽度，高度
+w.setFixedWidth(400)
+w.setFixedHeight(300)
+tempQize = QSize(380, 280)
+w.setFixedSize(tempQize)    # == w.setFixedSize(int, int)
+# == 改变尺寸 == setGeometry()同时改变位置和大小
+w.setGeometry(580, 380, 360, 260)
+
+# == move()是修改控件位置的的方法。注：屏幕坐标系的原点是屏幕的左上角。
+w.move(600, 400)      # 不用好像是居中
+
+# == 窗口添加标题    # 默认为 python
+w.setWindowTitle('Hello QWidget')
+
+# == 窗口属性
+# == 窗口属性 == 直接调用==geometry()
+print(f"w.x(): {w.x()} || w.y(): {w.y()}"
+      f" || w.width(): {w.width()} || w.height(): {w.height()}")
+# geometry()获得客户区的属性
+print(f"w.geometry().x(): {w.geometry().x()} || w.geometry().y(): {w.geometry().y()}"
+      f" || w.geometry().width(): {w.geometry().width()} || w.geometry().height(): {w.geometry().height()}")
+# framGeometry()获得整个窗口的属性
+print(f"w.frameGeometry().x(): {w.frameGeometry().x()} || w.frameGeometry().y(): {w.frameGeometry().y()}"
+      f" || w.frameGeometry().width(): {w.frameGeometry().width()} || w.frameGeometry().height(): {w.frameGeometry().height()}")
+# -------- 并没有觉得有什么区别
+# == 窗口属性 == 获得客户区的大小
+print(f"w.size() -> QSize: {w.size()}")
+# == 窗口属性 == 获得窗口默认大小？？
+# 可能窗口不显示默认大小，控件才用
+# print(f"w.sizeHint(): {w.sizeHint()}")    # 返回的（-1，-1） 其实是（640，480）
+# == 窗口属性 == pos()
+print(f"左上角坐标：w.pos() -> QPoint: {w.pos()}")
+
+# show()能让控件在桌面上显示出来。控件在内存里创建，之后才能在显示器上显示出来。
+w.show()
+# 最后，我们进入了应用的主循环中，事件处理器这个时候开始工作。主循环从窗口上接收事件，并把事件传入到派发到应用控件里。
+# 当调用exit()方法或直接销毁主控件时，主循环就会结束。sys.exit()方法能确保主循环安全退出。外部环境能通知主控件怎么结束。
+sys.exit(app.exec_())
+```
+
+> 需要注意的是，窗口和控件都继承自`QWidget`类，如果不为控件指定一个父对象，那么该控件就会被当作窗口处理，这时`setWindowTitle()` 和 `setWindowIcon()` 函数就会生效。
+
+### 高级函数用法
+
+```python
+# -*- coding: UTF-8 -*-
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QToolTip
+from PyQt5.QtCore import QSize
+from PyQt5.QtGui import QFont
+
+
+class WinForm(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle("QWidget_Func")
+        # == 设置气泡提示
+        # == 静态方法设置字体
+        QToolTip.setFont(QFont('SansSerif', 10))
+        self.setToolTip("这是一个<b>气泡提示</b>")
+        # =================
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    w = WinForm()
+    w.show()
+    sys.exit(app.exec_())
+```
+
+## QLabel
+
+QLabel对象作为一个占位符可以显示不可编辑的文本或图片，也可以放置一个GIF动画，还可以被用作提示标记为其他控件。
+
+纯文本、链接或富文本可以显示在标签上。
+
+```python
+# 继承关系如下
+QObject 
+	|
+    +--	QPaintDevice 
+        	 |	   
+             +-- QWidget
+                	|		 
+                    +--	QFrame
+                          |			 
+                          +-- QLabel
+```
+
+### 常用方法
+
+```python
+from PyQt5.QtCore import Qt
+```
+
+|      方法      |                             描述                             |
+| :------------: | :----------------------------------------------------------: |
+| setAlignment() |            按固定值方式对齐文本：(目前发现没啥用)            |
+|                | 水平方向：`Qt.AlignLeft`,`Qt.AliginRight`,`Qt.AliginCenter`,`Qt.AlignJustify(两端对齐)` |
+|                |  垂直方向：`Qt.AlignTop`,`Qt.AlignBottom`,`Qt.AlignVCenter`  |
+|                |                                                              |
+
 # PyQt5_Tutorial
 
 ## PyQt5.QtWidgets
@@ -119,6 +348,9 @@ sys.exit(app.exec_())
   ```python
   from PyQt5.QtWidgets import QWidget
   
+  class QWidget(__PyQt5_QtCore.QObject, __PyQt5_QtGui.QPaintDevice):
+      """ QWidget(parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags()) """
+      
   # 直接创建
   w = QWidget()
   
@@ -135,6 +367,13 @@ sys.exit(app.exec_())
           self.setWindowIcon(QIcon('..\\..\\image\\Globe.ico'))
           self.show()
   ```
+
+#### .centralWidget()
+
+```python
+# 返回窗口中心的一个控件，未设置时返回NULL
+centralWidget(self) -> QWidget
+```
 
 #### .close()
 
@@ -188,6 +427,20 @@ resize(self, int, int)		# 宽 和 高
 # 修改控件位置，注意屏幕的原点在左上角
 move(self, QPoint)
 move(self, int, int)
+```
+
+#### .setCentralWidget()
+
+```python
+# 设置窗口中心的控件
+setCentralWidget(self, QWidget)
+
+# 示例：
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+		self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        MainWindow.setCentralWidget(self.centralwidget)
 ```
 
 #### .setWindowTitle()
@@ -363,10 +616,68 @@ reply = QMessageBox.question(self, 'Message', "Are you sure to quit?",
 class QMainWindow(QWidget):
 ```
 
-#### .statusBar()
+#### .addToolBar()
 
 ```python
-statusBar(self) -> QStatusBar		# 返回一个状态栏对象,同时开启状态栏显示
+# 一般用于QMainWindow，添加工具栏
+addToolBar(self, Qt.ToolBarArea, QToolBar)
+addToolBar(self, QToolBar)
+addToolBar(self, str) -> QToolBar
+
+# 示例
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        self.toolBar = QtWidgets.QToolBar(MainWindow)
+        self.toolBar.setObjectName("toolBar")
+        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+```
+
+#### .setCentralWidget()
+
+```python
+# 设置窗口中心的控件，这个组件或占满所有剩余的区域。
+setCentralWidget(self, QWidget)
+
+# 示例：
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+		self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        MainWindow.setCentralWidget(self.centralwidget)
+```
+#### .setMenuBar()
+
+```python
+# 设置一个菜单栏
+setMenuBar(self, QWidget)
+
+# 示例：
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+		self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+```
+
+#### .setStatusBar()
+
+```python
+# 设置一个状态栏
+setStatusBar(self, QStatusBar)
+# 示例：
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+		self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+```
+
+#### .centralWidget()
+
+```python
+# 返回窗口中心的一个控件，未设置时返回NULL
+centralWidget(self) -> QWidget
 ```
 
 #### .menuBar()
@@ -375,16 +686,19 @@ statusBar(self) -> QStatusBar		# 返回一个状态栏对象,同时开启状态�
 menuBar(self) -> QMenuBar		# 返回一个菜单栏对象
 ```
 
+#### .statusBar()
+
+```python
+statusBar(self) -> QStatusBar		# 返回一个状态栏对象,同时开启状态栏显示
+
+# 示例：
+self.status = self.statusBar()
+self.status.showMessage("这是状态栏显示", 5000)
+```
 #### .contextMenuEvent()
 
 ```python
 contextMenuEvent(self, QContextMenuEvent)		# 右键菜单的函数重载
-```
-
-#### .setCentralWidget()
-
-```python
-setCentralWidget(self, QWidget)		# 放在QMainWindow的中间区域。这个组件或占满所有剩余的区域。
 ```
 
 ### QStatusBar
@@ -394,27 +708,12 @@ setCentralWidget(self, QWidget)		# 放在QMainWindow的中间区域。这个组�
 class QStatusBar(QWidget):
 ```
 
-#### .addToolBar()
-
-```python
-# 增加工具栏
-addToolBar(self, Qt.ToolBarArea, QToolBar)
-addToolBar(self, QToolBar)
-addToolBar(self, str) -> QToolBar
-```
-
 #### .showMessage()
 
 ```python
 showMessage(self, str, msecs: int = 0)		# 状态栏显示信息
-```
-
-#### .addMenu()
-
-```python
-addMenu(self, QMenu) -> QAction
-addMenu(self, str) -> QMenu
-addMenu(self, QIcon, str) -> QMenu
+# str: 要显示的状态栏信息
+# msecs：停留的时间（ms)，0代表一直显示
 ```
 
 ### QMenuBar
