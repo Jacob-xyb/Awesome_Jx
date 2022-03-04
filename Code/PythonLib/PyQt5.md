@@ -315,12 +315,16 @@ QObject
 from PyQt5.QtCore import Qt
 ```
 
-|      方法      |                             描述                             |
-| :------------: | :----------------------------------------------------------: |
-| setAlignment() |            按固定值方式对齐文本：(目前发现没啥用)            |
-|                | 水平方向：`Qt.AlignLeft`,`Qt.AliginRight`,`Qt.AliginCenter`,`Qt.AlignJustify(两端对齐)` |
-|                |  垂直方向：`Qt.AlignTop`,`Qt.AlignBottom`,`Qt.AlignVCenter`  |
-|                |                                                              |
+|          方法          |                             描述                             |
+| :--------------------: | :----------------------------------------------------------: |
+|     setAlignment()     |                    按固定值方式对齐文本：                    |
+|                        | 水平方向：`Qt.AlignLeft`,`Qt.AliginRight`,`Qt.AliginCenter`,`Qt.AlignJustify(两端对齐)` |
+|                        |  垂直方向：`Qt.AlignTop`,`Qt.AlignBottom`,`Qt.AlignVCenter`  |
+|      setPixmap()       |                设置`QLabel`为一个`Pixmap`图片                |
+| setOpenExternalLinks() |               打开允许访问超链接，默认是不允许               |
+|        **信号**        |                           **描述**                           |
+|    linkActivated()     | 单击`label`中嵌入的超链接时触发，`setOpenExternalLinks`必须设置为False |
+|     linkHovered()      | 当鼠标指针滑过`label`的超链接时触发，`label`必须有超链接才可以 |
 
 # PyQt5_Tutorial
 
@@ -806,10 +810,53 @@ move(self, QPoint)
 move(self, int, int)
 ```
 
+#### .setOpenExternalLinks()
+
+```python
+# 打开允许访问超链接，默认是不允许
+setOpenExternalLinks(self, bool)
+```
+
+#### .setAlignment()
+
+```python
+# 设置文本排版
+setAlignment(self, Union[Qt.Alignment, Qt.AlignmentFlag])
+
+# 示例：
+from PyQt5.QtCore import Qt
+label.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+label.setAlignment(Qt.AlignCenter)
+```
+
+#### .setPixmap()
+
+```python
+# 设置`QLabel`为一个`Pixmap`图片
+setPixmap(self, QPixmap)
+
+# 示例：
+label.setPixmap(QPixmap("../../image/Globe.png"))
+```
+
 #### .setText()
 
 ```python
 setText(self, str) 
+```
+
+#### .linkActivated()
+
+```python
+# 单击`label`中嵌入的超链接时触发，`setOpenExternalLinks`必须设置为False
+linkActivated(self, str) [signal]
+```
+
+#### .linkHovered()
+
+```python
+# 当鼠标指针滑过`label`的超链接时触发，`label`必须有超链接才可以
+linkHovered(self, str) [signal]
 ```
 
 ### QLineEdit
