@@ -322,6 +322,7 @@ from PyQt5.QtCore import Qt
 |                        |  垂直方向：`Qt.AlignTop`,`Qt.AlignBottom`,`Qt.AlignVCenter`  |
 |      setPixmap()       |                设置`QLabel`为一个`Pixmap`图片                |
 | setOpenExternalLinks() |               打开允许访问超链接，默认是不允许               |
+|       setBuddy()       | 设置`QLabel`的助记符及`buddy`（伙伴），即使用QLabel设置快捷键，会在快捷键后将焦点设置到其buddy上。此外，buddy可以是任何一个Widget控件，其QLabel必须是文本内容，并且使用“&”符号设置了助记符。 |
 |        **信号**        |                           **描述**                           |
 |    linkActivated()     | 单击`label`中嵌入的超链接时触发，`setOpenExternalLinks`必须设置为False |
 |     linkHovered()      | 当鼠标指针滑过`label`的超链接时触发，`label`必须有超链接才可以 |
@@ -827,6 +828,13 @@ setAlignment(self, Union[Qt.Alignment, Qt.AlignmentFlag])
 from PyQt5.QtCore import Qt
 label.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
 label.setAlignment(Qt.AlignCenter)
+```
+
+#### .setBuddy()
+
+```python
+# 设置`QLabel`的助记符及`buddy`（伙伴），即使用QLabel设置快捷键，会在快捷键后将焦点设置到其buddy上。此外，buddy可以是任何一个Widget控件，其QLabel必须是文本内容，并且使用“&”符号设置了助记符。
+setBuddy(self, QWidget)
 ```
 
 #### .setPixmap()
