@@ -6,6 +6,12 @@
 
 [快捷键](https://github.com/Jacob-xyb/Anything_is_Hotkey/blob/master/%E5%A4%A7%E5%9E%8B%E8%BD%AF%E4%BB%B6/PyCharm.md)
 
+# 设置
+
+## 控制台变量
+
+设置 - 控制台 - 默认显示控制台变量
+
 # 插件
 
 ## 插件下载
