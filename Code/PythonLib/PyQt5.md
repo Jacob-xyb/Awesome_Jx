@@ -327,6 +327,113 @@ from PyQt5.QtCore import Qt
 |    linkActivated()     | 单击`label`中嵌入的超链接时触发，`setOpenExternalLinks`必须设置为False |
 |     linkHovered()      | 当鼠标指针滑过`label`的超链接时触发，`label`必须有超链接才可以 |
 
+## QLineEdit
+
+## QTextEdit
+
+## QPushButton
+
+QPushButton 类继承自 QAbstractButton 类，形状是长方形，文本标题或图标可以显示在长方形上。它也是一种命令按钮，可以单击该按钮执行一些命令，或者响应一些事情。常见的有“确认”，“申请“，”取消“，”关闭“，“是”，“否”等按钮。
+
+### 设置快捷键
+
+比如按钮名字为 `"&Download"` 的快捷键是 `Alt + D` 。其规则是：按钮中有这个字母，并且字母前面加上“&”，这个字母一般是首字母，而且“&”不会被显示出来，但字母会显示一条下划线。
+
+## QRadioButton
+
+QRadioButton类继承自QAbstractButton类，它提供了一组可供选择的按钮和文本标签，用户可以选择其中一个选项，标签用于显示对应的文本信息。
+
+单选钮是一种开关按钮，可以切换为on或者off，即checked或者unchecked，主要是为用户提供“多选一”的选择。
+
+QRadioButton 是单选钮控件默认是独占的（Exclusive）。对于继承自同一个父类 Widget 的多个单选钮，它们属于同一个按钮组合，在单选钮组里，一次只能选择一个单选钮。如果需要多个独占的按钮组合，则需要将它们放在 QGroupBox 或 QButtonGroup 中。
+
+当将单选钮切换到 on 或者 off 时，就会发送 toggled 信号，绑定这个信号，在按钮状态发生变化时，触发相应的行为。
+
+常用方法：
+
+|    方法     |              描述               |
+| :---------: | :-----------------------------: |
+| isChecked() | 返回单选钮状态 ： True 或 False |
+|             |                                 |
+|             |                                 |
+
+## QCheckBox
+
+## QComboBox
+
+## QSpinBox
+
+## QSlider
+
+## QDialog
+
+## QMessageBox
+
+## QInputDialog
+
+## QFontDialog
+
+## QFileDialog
+
+QFileDialog 是用于打开和保存文件的标准对话框，继承自QDialog类。
+
+QFileDialog 使用了文件过滤器，用于显示指定扩展名的文件。也可以设置使用QFileDialog打开文件时的起始目录和指定扩展名的文件。
+
+|       方法        |                             描述                             |
+| :---------------: | :----------------------------------------------------------: |
+|   setFileMode()   | QFileDialog.AnyFile ： 任何文件 \|\| QFileDialog.ExistingFile ：已存在的文件 |
+|                   | QFileDialog : Directory ：文件目录 \|\| QFileDialog.ExistingFiles ：已存在的多个文件 |
+|  selectedFiles()  |                    返回一个选择的文件列表                    |
+| getOpenFileName() | 打开文件，返回文件名和过滤词缀 `(self, 'Open file', ".", "(*.py *.ui)")` |
+
+```python
+# -*- coding: UTF-8 -*-
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QGridLayout
+
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        self.layout = QGridLayout()
+        self.PushButton_Directory = QPushButton(Form)
+        self.PushButton_Directory.setText("&Directory")
+        self.PushButton_File = QPushButton(Form)
+        self.PushButton_File.setText("&File")
+        Form.resize(300, 160)
+        self.layout.addWidget(self.PushButton_Directory)
+        self.layout.addWidget(self.PushButton_File)
+        Form.setLayout(self.layout)
+
+
+class MyMainForm(QWidget, Ui_Form):
+    def __init__(self, parent=None):
+        super(MyMainForm, self).__init__(parent)
+        self.setupUi(self)  # 比较固定的初始化调用方式
+        self.PushButton_Directory.clicked.connect(self.getDir)
+        self.PushButton_File.clicked.connect(self.getFile)
+
+    def getDir(self):
+        dlg = QFileDialog()
+        dlg.setFileMode(QFileDialog.Directory)
+        if dlg.exec_():
+            dir_name = dlg.selectedFiles()
+            print(dir_name)
+
+    def getFile(self):
+        dir_name, _ = QFileDialog.getOpenFileName(self, 'Open file', ".", "(*.py *.ui)")
+        print(dir_name)
+
+
+if __name__ == '__main__':
+    import sys
+
+    app = QApplication(sys.argv)
+    myWin = MyMainForm()
+    myWin.show()
+    sys.exit(app.exec_())
+```
+
+
+
 # PyQt5_Tutorial
 
 ## PyQt5.QtWidgets
