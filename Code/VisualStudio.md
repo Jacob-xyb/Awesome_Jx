@@ -201,6 +201,25 @@ int main()
 
 请不要自定义名为`T`、`test`等的宏，会冲突报错。
 
+## Levmar
+
+```cpp
+ int dlevmar_dif(
+      void (*func)(double *p, double *hx, int m, int n, void *adata),//自己编写的函数，p为待优化的量，输入初始值，最后输出优化值；hx为待逼近的向量，通过p计算使hx不断逼近x；剩下的三个变量同下边相同
+      double *p, //p为待优化的量，输入初始值，最后输出优化值
+      double *x,//观测值，p最优时hx逼近x
+      int m,//p的维数
+      int n,//x或hx的维数
+      int itmax,//最大迭代次数
+      double *opts,//迭代过程中的一些阈值，包括最初计算阻尼系数时需要的系数、迭代结束需要的系数。如果不知道怎么设可以为NULL，代码有默认配置。
+      double *info,//返回迭代结束的一些信息，如迭代次数、结束原因等。
+      double *work,//一般设置为null
+      double *covar,//在代码中没有用到，可设置为null
+      void *adata)//附加信息，当需要向函数中传递其他自己需要的信息时使用，不用时可设置为null
+```
+
+将levmar中的 Axb.c compiler.h levmar.h levmar.c lm.c lm.h misc.c misc.h 添加到工程中。
+
 # 遇到的问题
 
 ## VisualStudio 产生的.ipch文件可以删除吗？
