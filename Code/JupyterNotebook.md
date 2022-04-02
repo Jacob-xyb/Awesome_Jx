@@ -33,7 +33,7 @@
 ### 设置默认打开目录
 
 - 打开文件：`jupyter_notebook_config.py`
-- 找到：`# c.NotebookApp.notebook_dir = ‘’` 
+- 找到：`# c.NotebookApp.notebook_dir = ''` 
 - 去掉该行前面的 `#`；在打算存放文件的位置先新建一个文件夹（很重要，最好是英文的），然后将新的路径设置在单引号中，保存配置文件。  
 
 ![img](https://i.loli.net/2021/07/14/sS69drQGoWP5gEz.png)
