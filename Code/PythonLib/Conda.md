@@ -1,3 +1,7 @@
+# Conda介绍
+
+[MiniConda官网下载地址](https://docs.conda.io/en/latest/miniconda.html)
+
 # Conda常用命令
 
 ```python
