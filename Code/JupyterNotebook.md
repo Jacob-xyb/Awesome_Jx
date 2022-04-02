@@ -1,5 +1,17 @@
 # 基础使用说明
 
+## 安装及运行
+
+- 安装
+
+1. 如果只有python环境，就直接用 pip安装	`pip install notebook`	
+2. 如果安装了 `anaconda`，会自带 JupyterNotebook
+3. 如果安装了 `miniConda` ，可以使用 conda 安装 `conda install notebook`
+
+- 运行
+
+​	`jupyter notebook`
+
 ## 编辑模式
 
 - 绿色：编辑模式 
