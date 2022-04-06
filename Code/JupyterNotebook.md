@@ -129,11 +129,49 @@ font-style: normal
 
 试了很多次，conda暂时没有这个源，`pip`是可以安装成功的。
 
-`pip install jupyter_contrib_nbextensions`
+清华源比较快 :smile:
+
+`pip install jupyter_contrib_nbextensions -i https://pypi.tuna.tsinghua.edu.cn/simple`
+
+安装完记得配置一下，不然不会显示的
+
+`jupyter contrib nbextension install --user`
 
 ## 个人配置
 
 ![img](https://i.loli.net/2021/06/11/HLFnG9CArI6WamR.png?ynotemdtimestamp=1626252559989)
+
+### Variable Inspector
+
+推荐指数：:star::star::star::star::star:
+
+变量监控
+
+![Variable Inspector icon](https://s2.loli.net/2022/04/06/UEqXvOKrYTJIkPp.png)
+
+### Table of Contents (2)
+
+推荐指数：:star::star::star::star::star:
+
+目录
+
+### Autopep8
+
+推荐指数：:star::star::star::star:
+
+需要库：`autopep8`
+
+pep8格式化单元格，默认快捷键：`ctrl + l`
+
+### Collapsible Headings
+
+折叠单元格的功能
+
+![](https://s2.loli.net/2022/04/06/b9YqfOR3JtZc5uA.png)
+
+### Highlight selected word
+
+高亮选中文本
 
 # 遇到的问题
 
