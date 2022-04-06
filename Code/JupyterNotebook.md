@@ -59,6 +59,10 @@ c.NotebookApp.browser = 'chrome'
 
 > MacOS并不需要设置，会用系统默认的浏览器。
 
+### 切换内核
+
+`conda install nb_conda_kernels`
+
 # jupyter notebook主题
 
 **[主题展示](https://blog.csdn.net/qq_41621362/article/details/89894126?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.control&dist_request_id=1332024.6981.16189848172240689&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.control)；[详细操作](https://blog.csdn.net/qq_30565883/article/details/79444750#commentsedit)；**
