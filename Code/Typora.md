@@ -274,7 +274,7 @@ PicGo(app)  --  找到PicGo.exe所在路径
 | $\lmoustache$ | \lmoustache | $\lceil$ | \lceil |
 | $\rmoustache$ | \rmoustache | $\rceil$ | \rcei |
 | ${x}\quad{y}$ | {x}\quad{y} | $\equiv$ | \equiv |
-| $\le$ | \le |  |  |
+| $\le$ | \le | $ \approx$ | \approx |
 
 ### 集合
 
