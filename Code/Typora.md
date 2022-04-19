@@ -321,6 +321,16 @@ PicGo(app)  --  找到PicGo.exe所在路径
 |   $\Rightarrow$   |   \Rightarrow   |    $\Leftarrow$    |    \Leftarrow    |
 | $\leftrightarrow$ | \leftrightarrow | $\nleftrightarrow$ | \nleftrightarrow |
 
+### 其他公式
+
+| 显示           | 命令         | 显示 | 命令 |
+| :------------: | :----------: | :----: | :----: |
+| $\binom{n}{m}$ | \binom{n}{m} |      |      |
+|                |              |      |      |
+|                |              |      |      |
+
+
+
 ## 修饰
 
 ### 上下标
@@ -561,4 +571,34 @@ $$
 $$
 e^{i{\color{red}x}} = \cos {\color{red}x} + i\sin {\color{red}x}
 $$
+
+# MarkDown 中的表情
+
+## 按字母排序
+
+### A
+
+- 短代码
+
+|   :a:   |   `:a:`   |   :ab:   |   `:ab:`   |   :abc:    |   `:abc:`    |
+| :-----: | :-------: | :------: | :--------: | :--------: | :----------: |
+| :abcd:  | `:abcd:`  | :accept: | `:accept:` | :aquarius: | `:aquarius:` |
+| :aries: | `:aries:` |          |            |            |              |
+|         |           |          |            |            |              |
+
+- 长代码
+
+|       图标       |        代码        |             说明             |
+| :--------------: | :----------------: | :--------------------------: |
+| :aerial_tramway: | `:aerial_tramway:` | 架空车道，也就是俗称的高架路 |
+|  :afghanistan:   |  `:afghanistan:`   |            阿富汗            |
+|   :argentina:    |   `:argentina:`    |            阿根廷            |
+
+## 十二星座
+
+|    图标    |     代码     |      说明      |
+| :--------: | :----------: | :------------: |
+| :aquarius: | `:aquarius:` | 宝瓶座；水瓶座 |
+|  :aries:   |  `:aries:`   |     白羊座     |
+|            |              |                |
 
