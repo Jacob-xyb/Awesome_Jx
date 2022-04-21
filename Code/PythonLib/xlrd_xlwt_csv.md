@@ -36,10 +36,10 @@ sheet.write(i, j, "[value]")
 path = "..."
 f = open(path, "w")
 # 如果不加 lineterminator='\n'; 就会每次在末尾追加空行
-w = csv.writer(res_file, lineterminator='\n')
+w = csv.writer(f, lineterminator='\n')
 # 两种实现方式
 # ==写入一行
-w.writerow(text)
+w.writerow(text)	# 切记要写在list里面
 # ==写入多行
 w.writerows(texts)
 ```
