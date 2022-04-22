@@ -585,6 +585,22 @@ $$
 | :abcd:  | `:abcd:`  | :accept: | `:accept:` | :aquarius: | `:aquarius:` |
 | :aries: | `:aries:` |          |            |            |              |
 |         |           |          |            |            |              |
+|         |           |          |            |            |              |
+|         |           |          |            |            |              |
+
+- Arrow
+
+| :arrow_lower_left:  | `:arrow_lower_left:`  | :arrow_left:  | `:arrow_left:`  |      |      |
+| ------------------- | --------------------- | ------------- | --------------- | ---- | ---- |
+| :arrow_lower_right: | `:arrow_lower_right:` | :arrow_right: | `:arrow_right:` |      |      |
+| :arrow_double_up:   | `:arrow_double_up:`   | :arrow_up:    | `:arrow_up:`    |      |      |
+| :arrow_double_down: | `:arrow_double_down:` | :arrow_down:  | `:arrow_down:`  |      |      |
+| :arrow_up_small:    | `:arrow_up_small: `   |               |                 |      |      |
+| :arrow_down_small:  | `:arrow_down_small:`  |               |                 |      |      |
+| :arrow_forward:     | `:arrow_forward:`     |               |                 |      |      |
+| :arrow_backward:    | `:arrow_backward:`    |               |                 |      |      |
+
+
 
 - 长代码
 
@@ -593,6 +609,10 @@ $$
 | :aerial_tramway: | `:aerial_tramway:` | 架空车道，也就是俗称的高架路 |
 |  :afghanistan:   |  `:afghanistan:`   |            阿富汗            |
 |   :argentina:    |   `:argentina:`    |            阿根廷            |
+|    :armenia:     |    `:armenia:`     | 亚美尼亚（苏联加盟共和国名） |
+|                  |                    |                              |
+|                  |                    |                              |
+|                  |                    |                              |
 
 ## 十二星座
 
