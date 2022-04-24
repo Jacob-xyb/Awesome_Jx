@@ -1,18 +1,24 @@
 # pip 操作
 
+[pip Reference](https://pip.pypa.io/en/latest/reference/)
+
 ## 相关操作
 
 ### 控制台常用操作
+
+- `pip show pip` ：查看 pip 信息
 
 - `pip --version` ：显示版本和路径
 
 - `pip --help` ：获取帮助
 
-- `pip install -U pip` : 升级 pip
+- `pip install -U pip`  / `pip install --upgrade pip`: 升级 pip
 
   平替：`sudo easy_install --upgrade pip`
 
 - `pip list` ：查看python安装的第三方模块
+
+  `import sys  sys.modules.keys()`： 查看模块信息
 
 - `pip freeze` ：老版本通用
 
@@ -59,6 +65,21 @@ networkx.__version__
   pip list -o
   ```
   
+- 参数讲解
+
+  ```python
+  # 解决timeout的方法
+  python -m pip --default-timeout=100
+  
+  # 下载包到本地
+  pip download
+  
+  # 搜索
+  pip search
+  
+  # 哈希
+  pip hash
+  ```
 
 ### 下载加速
 
@@ -86,6 +107,17 @@ pip install PyQt5 -i https://pypi.douban.com/simple
 
 ```python
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+- 手动改配置（不推荐）
+
+**（a）linux：**修改 `~/.pip/pip.conf` (没有就创建一个)， 修改 index-url至tuna，内容如下：
+
+**（b）windows**：直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini，文件内容如下：
+
+```python
+[global]
+ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ### conda虚拟环境pip下载
@@ -123,9 +155,19 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # pip 自动化安装
 
-## 打包已安装的依赖包
+## pip freeze
+
+切换到你需要导出包的环境
 
 `pip freeze >requirements.txt`  生成已安装包清单
+
+上述命令会保存在你系统默认文件夹，例如：`C:\Users\Administrator\`
+
+你需要更换路径可以改写，例如存在D盘：
+
+`pip freeze >D:requirements.txt`
+
+## 打包已安装的依赖包
 
 如本地未保留之前下载的各依赖包whl/tar/zip包，则需要用下面的命令从网络下载
 
@@ -306,3 +348,20 @@ pip install lshash3
 ```
 
  命令就可以了。注意：安装时依赖gcc，使用mac的同学可能麻烦点～ 
+
+# 自动化部署
+
+## 在线部署
+
+这个太简单了，只需要提取出当前环境依赖，然后安装即可。
+
+### 环境准备
+
+`pip freeze > D:requirements.txt`
+
+### 环境部署
+
+`pip install -r D:requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/`
+
+## 离线部署
+
