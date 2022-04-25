@@ -165,7 +165,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 你需要更换路径可以改写，例如存在D盘：
 
-`pip freeze >D:requirements.txt`
+`pip freeze >D:\requirements.txt`
 
 ## 打包已安装的依赖包
 
@@ -204,6 +204,12 @@ requirements.txt 内直接是文件名也可以。
 `pip uninstall -r requirements.txt -y` 
 
 -y: 默认全部同意
+
+### 卸载全部环境
+
+`pip freeze >D:\requirements.txt`
+
+`pip uninstall -r D:\requirements.txt -y`
 
 # 打包
 
