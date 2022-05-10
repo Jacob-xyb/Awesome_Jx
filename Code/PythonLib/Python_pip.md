@@ -288,6 +288,8 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
 
 ## PyQt5
 
+### Windows
+
 - 在线安装
 
   ```python
@@ -336,6 +338,31 @@ tips: TensorFlow 2.4.0 目前只有清华源才有镜像（但是容易卡住）
   # 批量安装离线包
   pip install --no-index -r .\requirements.txt
   ```
+
+### MacOS
+
+如果没有安装 Homebrew，请先安装：
+
+```python
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+git -C "$(brew --repo)" remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+```
+
+- Intel 芯片
+
+    没有玩过Intel芯片的，但是比较大众，安装方式比较好找，所以就简单展示下
+
+    ```python
+    brew install qt		# 安装qt
+    pip3 install sip	# 安装sip
+    pip3 install pyqt5	# 安装pyqt5
+    pip install PyQt5 -i https://pypi.douban.com/simple		# 清华源
+    ```
+
+- M1 芯片
+
+    太难安装了，TODO。
 
 # Python小型库安装
 
