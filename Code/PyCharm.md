@@ -130,7 +130,7 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 下载之后解压，目录如下 (ja-netfilter.jar 为核心文件)
 建议解压到一个稳定的目录，确保后期不会被删除！（注意是整个文件夹是一个整体）
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641661861701.png)
+![file](https://i0.hdslb.com/bfs/article/e332124fac2d30864f983f93e9fe8287260289a3.png@942w_209h_progressive.webp)
 
 2. 登录PyCharm
 
@@ -140,14 +140,14 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 
 这个时候回到PyCharm界面，点击 Start Trial，开始使用即可，上面的两个选项不用勾选
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662160631.png)
+![file](https://i0.hdslb.com/bfs/article/35de01d0c1c48d7dd7e6215c171b1081c9f9abc5.png@942w_567h_progressive.webp)
 
 4. 配置
 
 这个时候随便创建一个PyCharm项目，先进入到PyCharm里面。
 进来之后在菜单栏中点击`Help - > Edit Custom VM Options...`
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662227491.png)
+![file](https://i0.hdslb.com/bfs/article/ea86a5953a1416a2c7ee1a8ce0996d8fd284c310.png@942w_626h_progressive.webp)
 
 在 `pycharm64.exe.vmoptions`文件中配置上`ja-netfilter.jar`路径
 语法为
@@ -160,15 +160,15 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 -javaagent:E:\\ja-netfilter\\ja-netfilter.jar
 ```
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662367148.png)
+![file](https://i0.hdslb.com/bfs/article/396a0d2e777adb991fa7e96b174f33422212d5d4.png@942w_293h_progressive.webp)
 
 5. 重启即可
 
 Register 检查一下激活日期即可
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662616875.png)
+![file](https://i0.hdslb.com/bfs/article/12f4d5cb6437b931a47cb848c106a90ff3000722.png@942w_636h_progressive.webp)
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662632405.png)
+![file](https://i0.hdslb.com/bfs/article/7c949db25c64fe39d3163e57ed7c6b96f3a42109.png@942w_420h_progressive.webp)
 
 6. 补充
 
@@ -178,11 +178,11 @@ Register 检查一下激活日期即可
 C:\Users\Administrator\AppData\Roaming\JetBrains\PyCharm2021.3
 ```
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662511851.png)
+![file](https://i0.hdslb.com/bfs/article/1f96a5ba0acd5af773f65f4d6f104130ac34fe2c.png@942w_429h_progressive.webp)
 
 没找到就在安装目录的bin文件中去找（记住！优先C盘查找）
 
-![file](https://www.hicxy.com/wp-content/uploads/2022/01/image-1641662568252.png)
+![file](https://i0.hdslb.com/bfs/article/7b2a829bb42697149cef3f6dc9b05740876b5c27.png@942w_552h_progressive.webp)
 
 依然是在末尾添加补丁的路径
 
