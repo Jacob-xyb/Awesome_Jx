@@ -110,6 +110,25 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 
 [激活码获取地址2022(激活码只能激活一个月)](http://idea.hicxy.com/)
 
+## 插件激活路径
+
+配置插件的路径，与插件的位置要一致，保存后，重启IDE
+这里主要是看ja-netfilter.jar的存放位置
+Windows：
+-javaagent:D:\Program Files\pycharm2021.3.3\plugins\ja-netfilter\ja-netfilter.jar
+
+Mac:
+-javaagent:/Users/自定义文件名称/ja-netfilter.jar
+
+Linux:
+-javaagent:/home/自定义文件名称/ja-netfilter.jar
+
+- 如果配置错误
+  pycharm64.exe.vmoptions文件在这里打开
+  C:\Users\【系统用户名】\AppData\Roaming\JetBrains\pycharm2021.3\pycharm64.exe.vmoptions。
+  注意了：AppData是隐藏文件来的。
+  注意了：AppData是隐藏文件来的。
+
 ## 2022激活教程
 
 - 激活补丁
