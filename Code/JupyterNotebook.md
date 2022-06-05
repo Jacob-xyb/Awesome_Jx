@@ -24,6 +24,12 @@
 
 ## 相关设置说明
 
+### exe所在位置
+
+一般只有用miniconda安装时开始菜单中才会不显示。
+
+地址：D:\ProgramData\miniconda3\Scripts\jupyter-notebook.exe
+
 ### 创建/初始化 config文档
 
 - 打开anaconda prompt
@@ -88,7 +94,7 @@ jt -h		# 查看帮助
 jt -t chesterish -fs 14 -cellw 85% -ofs 13 -dfs 11 -T
 jt -t chesterish -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N	# 1
 jt -t grade3 -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
-jt -t gruvboxd -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N		# 1
+jt -t gruvboxd -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N		# 2
 jt -t gruvboxl -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t monokai -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 jt -t oceans16 -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
@@ -116,15 +122,19 @@ jt -t solarizedl -f fira -fs 11 -cellw 70% -ofs 11 -dfs 11 -T -N
 找到`cm-comment`中的内容，原内容为：
 
 ```
- color: #75715e;
- font-style: italic
+.cm-s-ipython span.cm-comment {
+ color: #928374;
+ font-style: italic;
+}
 ```
 
 修改后
 
 ```
-color: #75715e;
-font-style: normal
+.cm-s-ipython span.cm-comment {
+ color: #928374;
+ font-style: normal;
+}
 ```
 
 # Nbextensions
