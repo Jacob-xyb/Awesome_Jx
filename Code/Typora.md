@@ -121,6 +121,8 @@ h6.md-focus:before {
 
 - __打开github.css__
 
+  后面的注释不要才能正常生效
+
   ```css
   .md-fences,
   code,
@@ -153,6 +155,17 @@ h6.md-focus:before {
   
   @media print {
   ```
+
+  ```python
+  # 其他配色方案
+  {
+      background-color: #fcc6cc;
+      padding: 2px 2px 2px 2px;
+      color: #0e5555;  
+  }
+  ```
+
+  
 
 - 保存重启即可
 
