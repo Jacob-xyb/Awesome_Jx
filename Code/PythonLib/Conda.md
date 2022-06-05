@@ -16,6 +16,13 @@ conda env -h		# 查看环境管理的全部命令
 
 ## 环境管理操作
 
+```python
+# 系统变量
+1）C:\Users\Administrator\Miniconda3;
+2）C:\Users\Administrator\Miniconda3\Scripts;
+3）C:\Users\Administrator\Miniconda3\Library\bin; 
+```
+
 ### 查看
 
 - 查看环境相关信息
