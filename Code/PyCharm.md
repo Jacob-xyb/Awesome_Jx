@@ -125,6 +125,14 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 
 ![img](https://img-blog.csdnimg.cn/20200729170139198.png)
 
+## deep-dict-completion
+
+This plugin extends pycharm dict keys completion and typing to something usable.
+
+深度遍历字典 key 值，区分大小写，总之是一款神器。
+
+![](https://user-images.githubusercontent.com/5202330/33587199-dc534982-d964-11e7-946a-299b505b36a7.gif)
+
 # 破解教程
 
 [PyCharm2020.1破解教程（已验证）](https://www.cnblogs.com/mingyue5826/p/12913008.html)
