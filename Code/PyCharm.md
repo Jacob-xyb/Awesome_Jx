@@ -84,6 +84,12 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 
 ![image-20211027094119389](https://i.loli.net/2021/10/27/tWJPv7haL3GpdDE.png)
 
+## Statistic
+
+统计代码行数插件，挺方便的
+
+![image-20220629162318403](https://s2.loli.net/2022/06/29/5z3wihQmoBu4aWr.png)
+
 ### Jacob推荐设置
 
 1. **Darker**主题
