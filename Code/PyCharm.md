@@ -84,6 +84,12 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 
 ![image-20211027094119389](https://i.loli.net/2021/10/27/tWJPv7haL3GpdDE.png)
 
+## Statistic
+
+统计代码行数插件，挺方便的
+
+![image-20220629162318403](https://s2.loli.net/2022/06/29/5z3wihQmoBu4aWr.png)
+
 ### Jacob推荐设置
 
 1. **Darker**主题
@@ -124,6 +130,14 @@ Rainbow Brackets可以让代码块之间清晰的显示出各种颜色，比如�
 将类似于Sublime中的代码小地图嵌入到编辑器窗格中。使用自定义颜色进行语法高亮，同时使用明暗主题。
 
 ![img](https://img-blog.csdnimg.cn/20200729170139198.png)
+
+## deep-dict-completion
+
+This plugin extends pycharm dict keys completion and typing to something usable.
+
+深度遍历字典 key 值，区分大小写，总之是一款神器。
+
+![](https://user-images.githubusercontent.com/5202330/33587199-dc534982-d964-11e7-946a-299b505b36a7.gif)
 
 # 破解教程
 
