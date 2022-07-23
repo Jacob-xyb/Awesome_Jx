@@ -6,6 +6,18 @@
 
 # 刷机教程
 
+## 固件
+
+### 14.1.2
+
+**固件 11.0 ~ 14.1.2**
+
+链接：https://pan.baidu.com/s/1JrizpsB7SjvT0--p0T2Guw
+
+提取码：sf91  解压密码：bibgame.com
+
+### 其他
+
 [**大气层专用刷机软件Daybreak和刷机固件以及使用教程！【更新13.2.1固件】**](https://www.91tvg.com/thread-201375-1-1.html)
 
 [固件合集，更新至14.0.0;取码: 36sw](https://pan.baidu.com/s/1VIloKwWauZsiBbW9NpBp5g)
@@ -28,7 +40,7 @@
 
 ### 下载固件
 
-将固件下载后解压放在sd卡根目录
+将固件下载后解压放在sd卡根目录(路径不要有中文！)
 
 ### 更新系统
 
