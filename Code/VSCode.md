@@ -278,13 +278,23 @@ int main()
   这个插件可以直接运行C++代码。快捷键：`Ctrl + Alt + N`
 
   `Ctrl + P` 搜索  `Run In Terminal `，打上`√` 就可以让程序直接运行在vscode的集成控制台上。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210720094900880.png)
+  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210720094900880.png)
 
       code runner插件有一个局限,code runner插件的原理其实是自动在控制台下帮助我们输入g++ xxx.cpp -o xxx.exe(假设是默认情况)这条编译指令,不会再添加额外的命令,比如如果代码中使用了winsock2用g++编译的话需要额外添加-lwsock32指令,即完整指令为g++ xxx.cpp -o xxx.exe -lwsock32,此时直接使用code runner的话会无法编译,这种情况应该使用上面提到的vscode集成控制台手动输入编译指令编译。
 
 > TODO
 
 - 若是要问我如何`F5`调试，抱歉，我亲生使用大佬们的各种方法，百花齐放没有一个在我身上成功过，目前能直接运行已经很满意了，调试的事情等我回炉深造一下再来讲解~
+
+# VSCode for Web
+
+## 插件
+
+### open in browser
+
+This allows you to open the current file in your default browser or application.
+
+快捷键：`alt + b`
 
 # 遇到的问题
 
