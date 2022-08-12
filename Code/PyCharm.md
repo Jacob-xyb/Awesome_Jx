@@ -32,6 +32,13 @@ $End$
 # ========
 ```
 
+**jx_region**
+
+```python
+# region # $Document$
+# endregion
+```
+
 # 设置
 
 ## 控制台变量
