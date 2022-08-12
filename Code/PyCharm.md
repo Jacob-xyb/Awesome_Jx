@@ -16,11 +16,11 @@
 """
 __author__ = "Jacob-xyb"
 __web__ = "https://github.com/Jacob-xyb"
-__time__ = "$data$ $time$"
+__time__ = "$date$ $time$"
 """
 
 # 变量
-data = date()	True
+date = date()	True
 time = time()	True
 ```
 
