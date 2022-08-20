@@ -296,6 +296,30 @@ This allows you to open the current file in your default browser or application.
 
 快捷键：`alt + b`
 
+### Quokka.js
+
+Runtime values are updated and displayed in your IDE next to your code, as you type.
+
+### CSS Peak	
+
+使用此插件，你可以追踪至样式表中 CSS 类和 ids 定义的地方。当你在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码。
+
+### HTML Boilerplate
+
+通过使用 HTML 模版插件，你就摆脱了为 HTML 新文件重新编写头部和正文标签的苦恼。你只需在空文件中输入 html，并按 Tab 键，即可生成干净的文档结构。
+
+### Live Server
+
+Launch a development local Server with live reload feature for static & dynamic pages
+
+### Image preview
+
+Shows image preview in the gutter and on hover
+
+### JavaScript (ES6) code snippets
+
+### HTML CSS Support
+
 # 遇到的问题
 
 ## 通用问题
