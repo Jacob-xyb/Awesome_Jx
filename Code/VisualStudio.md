@@ -220,6 +220,28 @@ int main()
 
 将levmar中的 Axb.c compiler.h levmar.h levmar.c lm.c lm.h misc.c misc.h 添加到工程中。
 
+# VS操作原理
+
+## VS新建项目的目录结构
+
+**显然将解决方案和项目分开放置更便于管理**
+
+- 解决方案和项目分开放的情况
+
+<img src="https://s2.loli.net/2022/08/22/m7MbFIDAGjsnrUB.png" alt="image.png" style="zoom: 80%;" />
+
+![image.png](https://s2.loli.net/2022/08/22/qztsjgD8BNyfkSd.png)
+
+<img src="https://s2.loli.net/2022/08/22/cSjYake1wy7ZQdV.png" alt="目录结构.png" style="zoom:50%;" />
+
+- 解决方案和项目放一起的情况
+
+<img src="https://s2.loli.net/2022/08/22/3E9fXDnHmy7trhw.png" alt="image.png" style="zoom:80%;" />
+
+![image.png](https://s2.loli.net/2022/08/22/mrguNz6EqZBshYK.png)
+
+<img src="https://s2.loli.net/2022/08/22/PIth9UVdyoc7rwW.png" alt="目录结构.png" style="zoom:50%;" />
+
 # 遇到的问题
 
 ## VisualStudio 产生的.ipch文件可以删除吗？
