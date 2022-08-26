@@ -346,6 +346,62 @@ git push origin [tagName]		# 单独发布
 git push origin --tags			# 将本地所有标签一次性提交
 ```
 
+# Git 进阶操作
+
+## Git rebase
+
+### 什么是变基
+
+```python
+          A---B---C    dev
+         /
+    D---E---F---G    master
+```
+
+两个分支master、dev，其中dev分支是在master分支上的提交点E拉出的分支。
+
+在两个分支合并之前，master分支有了新的提交F、G，此时想在gitlab上合并dev分支到master分支是不被允许的，因为git不知道怎么处理ABC与FG的关系了，会提醒你需要先在本地rebase。
+
+所以到底什么是rebase变基呢？简单说就是修改dev分支的基础节点由E变到G。
+
+具体操作(无冲突情况下)：
+
+```python
+git checkout dev
+git rebase master -i   (-i表示交互模式)
+git push -f     (因为修改了commit记录，需要强push)
+```
+
+变基后的节点图如下，此时就可以将dev分支merge到master了：
+
+```python
+                  A'---B'---C'   dev
+                 /
+    D---E---F---G    master
+```
+
+**rebase变基官方解释**：当执行rebase操作时，git会从两个分支的共同祖先开始提取待变基分支上的修改，然后将待变基分支指向基分支的最新提交，最后将刚才提取的修改应用到基分支的最新提交的后面。
+
+结合例子解释：当在dev分支上执行git rebase master时，git会从master和dev的共同祖先E开始提取dev分支上的修改，也就是A、B、C提交。然后将A、B、C提交接到master分支的最新提交上，也就是G。但这个过程是删除原来的A、B、C，生成新的A’、B’、C’，他们的提交内容一样，但commit id不同。
+
+通俗解释：rebase，变基，可以直接理解为改变基底。dev分支是基于master分支的E拉出来的分支，dev的基底是E。而master在E之后有新的提交，就相当于此时要用master上新的提交来作为dev的新基底。实际操作为把E之后dev的提交存下来，然后删掉原来这些提交，再找到master的最新提交位置，把存下来的提交再接上去（新节点新commit id），如此dev分支的基底就相当于变成了G而不是原来的E了。（注意，如果master上在E以后没有新提交，那么就还是用原来的E作为基，rebase操作相当于无效，此时和git merge就基本没区别了，差异只在于git merge会多一条记录Merge操作的提交记录，而rebase则不会有Merge记录）
+
+## Git cherry-pick
+
+### 简单用法
+
+将一个分支上的某个commit合并到另一个分支，可用使用cherry-pick命令实现。
+
+比如将dev分支上commit_id为 **f99f2b5** 的提交合并到master分支：
+
+1）切换到master分支：git checkout master
+
+2）执行cherry-pick命令：git cherry-pick **f99f2b5**
+
+3）推送到远程master仓库：git push
+
+注意master上新的commit id与dev上的id并不相同，即只是将dev上的修改拷贝过来作为一个新的提交，这就会带来一个问题：cherry-pick之后，dev想再次merge到master，要先对dev分支进行rebase变基。
+
 # GitHub
 
 ## 概念相关
