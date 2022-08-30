@@ -45,7 +45,8 @@ conda list -n [your_env]   	# 查看某个指定环境的已安装包
 
 ```python
 # 创建环境
-conda create --name your_env_name
+conda create --name your_env_name		# 空环境
+conda install -n your_env_name python	# 将Python添加到现有环境中
 # 创建指定python版本的环境
 conda create --name your_env_name python=2.7
 conda create --name your_env_name python=3
