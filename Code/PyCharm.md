@@ -150,6 +150,19 @@ This plugin extends pycharm dict keys completion and typing to something usable.
 
 ![](https://user-images.githubusercontent.com/5202330/33587199-dc534982-d964-11e7-946a-299b505b36a7.gif)
 
+# 问题记录
+
+## 终端运行conda
+
+正常情况下是无法运行 conda 命令的，提示 `conda init` 
+
+执行后就会报错：`: 无法加载文件 ... 因为在此系统上禁止运行脚本.`
+
+解决方案：
+
+1. 以管理员身份运行PowerShell
+2. 执行 `get-ExecutionPolicy`，如果返回 `Restricted` 说明被禁止了， 执行 `set-ExecutionPolicy RemoteSigned` 选择 Y 即可。
+
 # 破解教程
 
 [PyCharm2020.1破解教程（已验证）](https://www.cnblogs.com/mingyue5826/p/12913008.html)
