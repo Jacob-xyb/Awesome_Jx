@@ -320,6 +320,14 @@ Shows image preview in the gutter and on hover
 
 ### HTML CSS Support
 
+### Auto Rename Tag
+
+自动改变头尾标签
+
+### htmltagwrap
+
+可以包裹代码加上标签
+
 # 遇到的问题
 
 ## 通用问题
