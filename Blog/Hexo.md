@@ -10,7 +10,7 @@ Hexo是一款基于Nodejs的，快速、简洁且高效的博客框架。具有�
 
 **安装Node**
 
-Node.js 为大多数平台提供了官方的 [安装程序](https://link.zhihu.com/?target=https%3A//nodejs.org/en/download/)。
+Node.js 为大多数平台提供了官方的 [安装程序](https://nodejs.org/en/download/)。
 
 :cry::cry::cry: 千万别点 安装额外工具，千万别点。
 
