@@ -152,16 +152,39 @@ This plugin extends pycharm dict keys completion and typing to something usable.
 
 # 问题记录
 
-## 终端运行conda
+## pycharm 终端运行conda
 
-正常情况下是无法运行 conda 命令的，提示 `conda init` 
+正常情况下是无法运行 conda 命令的，提示 `conda init`  / `conda init powershell`
 
-执行后就会报错：`: 无法加载文件 ... 因为在此系统上禁止运行脚本.`
+重开终端即可。
 
-解决方案：
+- **如果出现报错**
 
-1. 以管理员身份运行PowerShell
-2. 执行 `get-ExecutionPolicy`，如果返回 `Restricted` 说明被禁止了， 执行 `set-ExecutionPolicy RemoteSigned` 选择 Y 即可。
+  ![image.png](https://s2.loli.net/2022/10/20/vIYh4doFNSCsJB3.png)
+
+  `无法加载文件 ... 因为在此系统上禁止运行脚本.`
+
+    解决方案：
+
+    1. 以管理员身份运行PowerShell
+  
+    2. 解除脚本限制
+  
+       执行 `get-ExecutionPolicy`，如果返回 `Restricted` 说明被禁止了，那么需要解除权限。
+  
+       **管理员打开终端，执行** `set-ExecutionPolicy RemoteSigned` 选择 `Y` 即可。
+  
+       最后再执行一次  `get-ExecutionPolicy` ，返回 `RemoteSigned` 说明成功。
+  
+  ![image.png](https://s2.loli.net/2022/10/20/3bCe5cxpiasUdgk.png)
+
+## pycharm 终端自动进入 当前环境
+
+一般 pycharm 默认的终端一般是 `powershell.exe` ，可以自行更改到 `cmd.exe` 即可自动进入当前项目环境。
+
+**文件 -> 设置 -> 工具 -> 终端 -> 如下图设置即可**
+
+![image.png](https://s2.loli.net/2022/10/20/DUcF8BLjrC3Pzv9.png)
 
 # 破解教程
 
