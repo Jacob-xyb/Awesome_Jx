@@ -392,6 +392,26 @@ pip install lshash3
 
 `pip freeze > D:requirements.txt`
 
+### 导出当前项目环境
+
+1. 安装 pipreqs
+
+   `pip install pipreqs`
+
+2. 进入当前项目根目录执行：
+
+   `pipreqs . --encoding=utf8 --force`
+
+   ```python
+   # “.” 指的是将导出依赖包的文件放在当前目录下
+   # “--encoding=utf8” 指的是存放文件的编码为utf-8,否则会报错
+   # “--force” --force 强制执行，当生成目录下的requirements.txt存在时强子覆盖
+   ```
+
+3. 新环境安装即可
+
+   `pip install -r requirements.txt`
+
 ### 环境部署
 
 `pip install -r D:requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/`

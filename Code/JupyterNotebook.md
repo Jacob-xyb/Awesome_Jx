@@ -67,7 +67,17 @@ c.NotebookApp.browser = 'chrome'
 
 ### 切换内核
 
-`conda install nb_conda_kernels`
+1. 在 base 环境中安装 nb_conda
+
+   `conda install nb_conda`
+
+2. 在需要切换的环境中安装 jupyter
+
+   `conda install jupyter`
+
+3. 需要注意的是，运行的内核需要安装 autopep8
+
+   `pip install autopep8`
 
 # jupyter notebook主题
 
